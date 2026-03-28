@@ -23,9 +23,9 @@
 
 // ===== UPDATE THESE VALUES WITH YOUR HOSTINGER DATABASE CREDENTIALS =====
 define('DB_HOST', 'localhost');                    // Keep as 'localhost' for Hostinger
-define('DB_NAME', 'u123456789_pragyan_contact');   // Replace with your actual database name
-define('DB_USER', 'u123456789_pragyan_admin');     // Replace with your actual database username  
-define('DB_PASS', 'YOUR_SECURE_PASSWORD_HERE');    // Replace with your actual database password
+define('DB_NAME', 'u734784864_pragyan_db');        // Actual database name
+define('DB_USER', 'u734784864_admin');             // Actual database username  
+define('DB_PASS', 'PragyanDb@2026!');              // Actual database password
 // ========================================================================
 
 function get_db_connection() {
