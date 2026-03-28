@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pragyan EduSec — Technology & Innovation Ecosystem</title>
+  <meta name="description" content="Building the Next Generation Technology Ecosystem. We enable students, researchers, and institutions to collaborate, innovate, and build real technologies through engineering programs, research initiatives, and innovation labs.">
+  <meta name="keywords" content="technology ecosystem, engineering, research, innovation, institutional collaboration, India, Pragyan EduSec">
+  <meta property="og:title" content="Pragyan EduSec — Technology & Innovation Ecosystem">
+  <meta property="og:description" content="Building the Next Generation Technology Ecosystem for students, researchers, and institutions across India.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>∞</text></svg>">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .pillar-icon i, .eco-node-icon i, .eco-note-icon i, .program-icon i, .ps-icon i { width: 1em; height: 1em; }
+  </style>
+</head>
+<body>
+
+  <!-- Background Effect -->
+  <div class="bg-stars">
+    <canvas id="bg-canvas"></canvas>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/images/PragyanLogomain.png" alt="Pragyan EduSec Logo" class="brand-logo">
+        <div class="brand-text">PRAGYAN <span>EDUSEC</span></div>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="ecosystem.html">Ecosystem</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="contact.html" class="nav-cta">Contact Us</a>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===================================================
+       SECTION 1 — HERO
+       =================================================== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Technology &amp; Innovation Ecosystem
+        </div>
+        <h1>
+          Reimagining how <span class="gradient-text">India</span><br>
+          learns <span class="gradient-text">Technology</span><br>
+          with a clear path to global excellence.
+        </h1>
+        <p class="hero-subtitle">
+          Rebuilding learning across India — Making quality education accessible, relatable, and scalable for India's grassroots.
+        </p>
+        <div class="hero-actions">
+          <a href="ecosystem.html" class="btn btn-primary" id="hero-explore-btn">
+            Explore Ecosystem
+            <span class="btn-icon">→</span>
+          </a>
+          <a href="contact.html" class="btn btn-secondary" id="hero-partner-btn">
+            Partner With Us
+          </a>
+        </div>
+
+      </div>
+    </div>
+    <!-- Scroll indicator -->
+    <a href="#pillars" class="scroll-indicator" aria-label="Scroll down">
+      <div class="scroll-circle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 5v14M5 12l7 7 7-7"/>
+        </svg>
+      </div>
+    </a>
+  </section>
+
+  <!-- ===================================================
+       STATS BAR
+       =================================================== -->
+  <section class="stats-section" id="stats">
+    <div class="container">
+      <div class="stats-grid stagger-children">
+        <div class="stat-item">
+          <div class="stat-number" data-count="5000" data-suffix="+">0</div>
+          <div class="stat-label">Engineers Reached</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="25" data-suffix="+">0</div>
+          <div class="stat-label">Programs Conducted</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="15" data-suffix="+">0</div>
+          <div class="stat-label">Institutions Partnered</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="10" data-suffix="+">0</div>
+          <div class="stat-label">Research Initiatives</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SECTION 2 — WHAT WE DO (4 PILLARS)
+       =================================================== -->
+  <section id="pillars">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">What We Do</div>
+        <h2>Four Pillars of Our <span class="gradient-text">Ecosystem</span></h2>
+        <p>From hands-on engineering to institutional partnerships — every pillar is designed to build real, lasting impact.</p>
+      </div>
+
+      <div class="pillars-grid stagger-children">
+        <!-- Pillar 1 -->
+        <div class="pillar-card" id="pillar-engineering">
+          <div class="pillar-icon-wrap">
+            <div class="pillar-icon"><i data-lucide="settings"></i></div>
+          </div>
+          <div class="pillar-content">
+            <h3>Engineering Development</h3>
+            <p>Hands-on building of real systems and technologies — not simulations, not theory alone. Real engineering practice.</p>
+            <a href="ecosystem.html" class="pillar-link">See Programs →</a>
+          </div>
+          <div class="pillar-number">01</div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="pillar-card" id="pillar-research">
+          <div class="pillar-icon-wrap">
+            <div class="pillar-icon"><i data-lucide="flask-conical"></i></div>
+          </div>
+          <div class="pillar-content">
+            <h3>Research &amp; Innovation</h3>
+            <p>Publishing research, developing prototypes, and exploring technical frontiers that push the boundaries of knowledge.</p>
+            <a href="blogs.html" class="pillar-link">View Research →</a>
+          </div>
+          <div class="pillar-number">02</div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="pillar-card" id="pillar-collaboration">
+          <div class="pillar-icon-wrap">
+            <div class="pillar-icon"><i data-lucide="landmark"></i></div>
+          </div>
+          <div class="pillar-content">
+            <h3>Institutional Collaboration</h3>
+            <p>Working with colleges and universities to build innovation ecosystems and deep technical learning environments.</p>
+            <a href="contact.html" class="pillar-link">Partner With Us →</a>
+          </div>
+          <div class="pillar-number">03</div>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="pillar-card" id="pillar-builders">
+          <div class="pillar-icon-wrap">
+            <div class="pillar-icon"><i data-lucide="wrench"></i></div>
+          </div>
+          <div class="pillar-content">
+            <h3>Builder Community</h3>
+            <p>Connecting engineers, innovators, and researchers in a thriving community that shares, builds, and innovates together.</p>
+            <a href="about.html" class="pillar-link">Meet the Team →</a>
+          </div>
+          <div class="pillar-number">04</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SECTION 3 — ECOSYSTEM MODEL (ANIMATED FLOW)
+       =================================================== -->
+  <section id="ecosystem-model" class="ecosystem-model-section" style="overflow: visible;">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">How It Works</div>
+        <h2>The <span class="gradient-text">Ecosystem</span> Model</h2>
+        <p>Our ecosystem transforms learners into builders by enabling them to create technologies, publish research, and develop impactful systems.</p>
+      </div>
+
+      <div class="ecosystem-flow reveal">
+        <div class="eco-node" id="eco-collaboration">
+          <div class="eco-node-icon"><i data-lucide="handshake"></i></div>
+          <div class="eco-node-label">Collaboration</div>
+          <div class="eco-node-desc">Partner with institutions & communities</div>
+        </div>
+
+        <div class="eco-connector">
+          <div class="eco-arrow-line"></div>
+          <div class="eco-arrow-label">engaging</div>
+        </div>
+
+        <div class="eco-node" id="eco-students">
+          <div class="eco-node-icon"><i data-lucide="graduation-cap"></i></div>
+          <div class="eco-node-label">Students</div>
+          <div class="eco-node-desc">Learn through structured programs</div>
+        </div>
+
+        <div class="eco-connector">
+          <div class="eco-arrow-line"></div>
+          <div class="eco-arrow-label">driven to</div>
+        </div>
+
+        <div class="eco-node" id="eco-compete">
+          <div class="eco-node-icon"><i data-lucide="trophy"></i></div>
+          <div class="eco-node-label">Compete</div>
+          <div class="eco-node-desc">Hackathons, challenges & build sprints</div>
+        </div>
+
+        <div class="eco-connector">
+          <div class="eco-arrow-line"></div>
+          <div class="eco-arrow-label">fueling</div>
+        </div>
+
+        <div class="eco-node" id="eco-research">
+          <div class="eco-node-icon"><i data-lucide="radio-tower"></i></div>
+          <div class="eco-node-label">Research</div>
+          <div class="eco-node-desc">Publish & explore innovations</div>
+        </div>
+
+        <div class="eco-connector">
+          <div class="eco-arrow-line"></div>
+          <div class="eco-arrow-label">creating</div>
+        </div>
+
+        <div class="eco-node" id="eco-impact" style="border-color: rgba(37,99,235,0.25);">
+          <div class="eco-node-icon"><i data-lucide="globe"></i></div>
+          <div class="eco-node-label">Impact</div>
+          <div class="eco-node-desc">Global change, India-driven</div>
+        </div>
+      </div>
+
+      <!-- Supporting note -->
+      <div class="ecosystem-note reveal">
+        <div class="eco-note-icon"><i data-lucide="lightbulb"></i></div>
+        <p>Our ecosystem is supported by an internal technology infrastructure designed to enable research collaboration, project development, and innovation tracking — purpose-built to power this flywheel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       PROGRAMS PREVIEW TEASER
+       =================================================== -->
+  <section id="programs-preview" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Active Initiatives</div>
+        <h2>Programs <span class="gradient-text">&amp; Activities</span></h2>
+        <p>Six structured programs running across institutions in India right now — from Faculty Development to Innovation Labs.</p>
+      </div>
+
+      <div class="programs-grid stagger-children">
+        <div class="program-card">
+          <div class="program-icon"><i data-lucide="graduation-cap"></i></div>
+          <div class="program-body">
+            <h4>Faculty Development Programs</h4>
+            <p>MoU-based faculty programs that equip educators with cutting-edge technical knowledge and an engineering mindset.</p>
+          </div>
+          <div class="program-tag">FDP</div>
+          <a href="ecosystem.html#fdp" class="program-link">View Program →</a>
+        </div>
+
+        <div class="program-card">
+          <div class="program-icon"><i data-lucide="code"></i></div>
+          <div class="program-body">
+            <h4>Student Development Programs</h4>
+            <p>Structured engineering tracks that take students from foundational learning to building real technical systems.</p>
+          </div>
+          <div class="program-tag">SDP</div>
+          <a href="ecosystem.html#sdp" class="program-link">View Program →</a>
+        </div>
+
+        <div class="program-card">
+          <div class="program-icon"><i data-lucide="zap"></i></div>
+          <div class="program-body">
+            <h4>Hackathons &amp; Build Sprints</h4>
+            <p>Cross-institutional intensive build events where teams prototype real solutions under time pressure.</p>
+          </div>
+          <div class="program-tag">BUILD</div>
+          <a href="ecosystem.html#hackathons" class="program-link">View Program →</a>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top: 40px;">
+        <a href="ecosystem.html" class="btn btn-primary" id="see-all-programs-btn">See All 6 Programs →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       RESEARCH TEASER
+       =================================================== -->
+  <section id="research-preview">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Knowledge Work</div>
+        <h2>Research &amp; <span class="gradient-text">Innovation</span></h2>
+        <p>We are a knowledge-driven organization. Our active research spans technical exploration, prototype development, and engineering education innovation.</p>
+      </div>
+
+      <div class="research-grid stagger-children">
+        <div class="research-card" id="res-home-1">
+          <div class="research-card-header">
+            <div class="research-status in-progress">In Progress</div>
+            <div class="research-domain">Cybersecurity Systems</div>
+          </div>
+          <h4>Engineering Secure Infrastructure Frameworks for Academic Institutions</h4>
+          <p>A technical exploration into designing security-first infrastructure tailored for Indian academic environments.</p>
+          <div class="research-meta">
+            <span class="research-tag">Security</span>
+            <span class="research-tag">Infrastructure</span>
+            <span class="research-tag">Academia</span>
+          </div>
+        </div>
+
+        <div class="research-card" id="res-home-2">
+          <div class="research-card-header">
+            <div class="research-status prototype">Prototype</div>
+            <div class="research-domain">Innovation Tracking</div>
+          </div>
+          <h4>Building an Ecosystem Intelligence Platform for Research Collaboration</h4>
+          <p>Internal tooling to track, connect, and amplify research across student labs, faculty leads, and external partnerships.</p>
+          <div class="research-meta">
+            <span class="research-tag">Platform</span>
+            <span class="research-tag">Collaboration</span>
+            <span class="research-tag">AI</span>
+          </div>
+        </div>
+
+        <div class="research-card" id="res-home-3">
+          <div class="research-card-header">
+            <div class="research-status exploration">Exploration</div>
+            <div class="research-domain">Engineering Education</div>
+          </div>
+          <h4>Rethinking Technical Pedagogy: From Certification to Engineering Mindset</h4>
+          <p>How must engineering education evolve — from certificate chasing to authentic systems thinking and real building?</p>
+          <div class="research-meta">
+            <span class="research-tag">Education</span>
+            <span class="research-tag">Engineering</span>
+            <span class="research-tag">Design</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="research-cta reveal" style="margin-top:48px;">
+        <p>More research initiatives are forming. We are early builders of a long-term knowledge institution.</p>
+        <a href="blogs.html" class="btn btn-primary" id="research-library-btn">Explore Research Library →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       INSTITUTIONAL PARTNERSHIP TEASER
+       =================================================== -->
+  <section id="partnerships-preview" class="partnerships-section">
+    <div class="container">
+      <div class="partnerships-inner">
+        <div class="partnerships-left reveal-left">
+          <div class="section-label" style="justify-content: flex-start;">For Deans &amp; Directors</div>
+          <h2>Collaborating with Institutions<br>to Build <span class="gradient-text">Innovation Ecosystems</span></h2>
+          <p class="partner-lead">We work with colleges and universities to design and deploy innovation programs — FDPs, SDPs, labs, and research environments — that transform how students engage with technology.</p>
+          <div class="partner-features">
+            <div class="partner-feature">
+              <div class="partner-feat-icon">✦</div>
+              <div>
+                <strong>MoU-based formal partnership framework</strong>
+                <p>Structured programs delivered with 100% customization for your curriculum and engineering branches.</p>
+              </div>
+            </div>
+            <div class="partner-feature">
+              <div class="partner-feat-icon">✦</div>
+              <div>
+                <strong>Research &amp; Innovation Environments</strong>
+                <p>Supporting faculty and students in conducting and publishing original technical research.</p>
+              </div>
+            </div>
+            <div class="partner-feature">
+              <div class="partner-feat-icon">✦</div>
+              <div>
+                <strong>Innovation Labs embedded on campus</strong>
+                <p>Building a builder culture from within, turning your institution into an engineering hub.</p>
+              </div>
+            </div>
+          </div>
+          <a href="contact.html" class="btn btn-primary" id="partner-cta-btn" style="margin-top: 2rem;">Explore Partnership →</a>
+        </div>
+
+        <div class="partnerships-right reveal-right">
+          <div class="partner-stat-stack">
+            <div class="partner-stat-card">
+              <div class="ps-icon"><i data-lucide="landmark"></i></div>
+              <div class="ps-content">
+                <div class="ps-number">15+</div>
+                <div class="ps-label">Institutions Collaborating</div>
+              </div>
+            </div>
+            <div class="partner-stat-card">
+              <div class="ps-icon"><i data-lucide="file-text"></i></div>
+              <div class="ps-content">
+                <div class="ps-number">MOU</div>
+                <div class="ps-label">Formal Partnership Agreements</div>
+              </div>
+            </div>
+            <div class="partner-stat-card">
+              <div class="ps-icon"><i data-lucide="target"></i></div>
+              <div class="ps-content">
+                <div class="ps-number">100%</div>
+                <div class="ps-label">Program Customization</div>
+              </div>
+            </div>
+            <div class="partner-stat-card highlighted">
+              <div class="ps-icon"><i data-lucide="rocket"></i></div>
+              <div class="ps-content">
+                <div class="ps-number">2028</div>
+                <div class="ps-label">Full Ecosystem Launch Target</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       FINAL CTA BANNER
+       =================================================== -->
+  <section style="padding: 0 0 100px;">
+    <div class="container">
+      <div class="cta-banner reveal" id="final-cta">
+        <h2>Ready to Join the Ecosystem?</h2>
+        <p>Whether you're a student, researcher, or institution — there's a place for you in the Pragyan EduSec ecosystem.</p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+          <a href="ecosystem.html" class="btn" id="cta-explore-btn">Explore Ecosystem →</a>
+          <a href="contact.html" class="btn" id="cta-contact-btn" style="background:rgba(255,255,255,0.15);color:white;border:1px solid rgba(255,255,255,0.3);">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       FOOTER
+       =================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-brand">
+            <img src="assets/images/PragyanLogo_White.png" alt="Pragyan EduSec Logo" class="brand-logo">
+            <div class="brand-text">PRAGYAN <span>EDUSEC</span></div>
+          </a>
+          <p style="margin-top:16px;">Building the Next Generation Technology Ecosystem — for engineers, researchers, and institutions across India.</p>
+        </div>
+        <div>
+          <h4>Navigate</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="ecosystem.html">Ecosystem</a>
+            <a href="blogs.html">Blogs</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+        <div>
+          <h4>Programs</h4>
+          <div class="footer-links">
+            <a href="ecosystem.html">Faculty Development (FDP)</a>
+            <a href="ecosystem.html">Student Development (SDP)</a>
+            <a href="ecosystem.html">Hackathons</a>
+            <a href="ecosystem.html">Innovation Labs</a>
+            <a href="ecosystem.html">Research Initiatives</a>
+          </div>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <div class="footer-links">
+            <a href="mailto:anantnag@pragyanedusec.in">anantnag@pragyanedusec.in</a>
+            <a href="tel:+917618741171">+91 7618741171</a>
+            <a>Hubballi, Karnataka, India</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Pragyan EduSec. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/company/pragyan-edusec/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="Follow us on LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://www.instagram.com/pragyanedusec?igsh=MTRwOG9zZ2Njb3JsaQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Follow us on Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/circuit-bg.js"></script>
+  <script src="js/main.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

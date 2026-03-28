@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecosystem — Pragyan EduSec | Programs, Labs & Innovation</title>
+  <meta name="description" content="Explore how the Pragyan EduSec ecosystem works — FDP, SDP, Hackathons, Research Presentations, Innovation Labs, and Technical Workshops running across Indian institutions.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>∞</text></svg>">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Ecosystem flow — detailed */
+    .eco-flow-detail {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .eco-flow-detail::before {
+      content: '';
+      position: absolute;
+      top: 56px; left: 10%; right: 10%;
+      height: 2px;
+      background: var(--accent-gradient);
+      opacity: 0.2;
+    }
+    .efd-node {
+      text-align: center;
+      padding: 0 16px 32px;
+      position: relative;
+    }
+    .efd-dot {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 2px solid rgba(37,99,235,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; margin: 0 auto 20px;
+      position: relative; z-index: 1;
+      transition: var(--transition-base);
+    }
+    .efd-node:hover .efd-dot {
+      border-color: var(--accent-blue);
+      background: rgba(37,99,235,0.08);
+      transform: scale(1.1);
+    }
+    .efd-node:last-child .efd-dot {
+      background: #0f172a;
+      border-color: rgba(37,99,235,0.35);
+      color: white;
+      box-shadow: 0 0 0 6px rgba(37,99,235,0.08), 0 4px 16px rgba(15,23,42,0.2);
+    }
+    .efd-node:last-child .efd-label {
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .efd-label {
+      font-family: var(--font-brand);
+      font-size: 0.9rem; font-weight: 800; color: #0a0f1e;
+      margin-bottom: 8px;
+    }
+    .efd-desc {
+      font-size: 0.78rem; color: #64748b; line-height: 1.5;
+    }
+
+    /* Program sections — alternating */
+    .program-section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border-glass);
+    }
+    .program-section:last-of-type { border-bottom: none; }
+    .program-section:nth-child(even) { background: var(--bg-secondary); }
+
+    .prog-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .prog-inner.reverse { direction: rtl; }
+    .prog-inner.reverse > * { direction: ltr; }
+
+    .prog-num {
+      font-family: var(--font-heading);
+      font-size: 5.5rem; font-weight: 900;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; opacity: 0.12; line-height: 1; margin-bottom: -16px;
+    }
+    .prog-label-tag {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--accent-cyan);
+      margin-bottom: 12px; display: block;
+    }
+    .prog-text h2 {
+      font-family: var(--font-brand);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 800; color: #0a0f1e;
+      margin-bottom: 20px; line-height: 1.25;
+    }
+    .prog-text p {
+      font-size: 0.97rem; color: #334155;
+      line-height: 1.8; margin-bottom: 16px; font-weight: 450;
+    }
+    .prog-features { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
+    .prog-feat {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 14px 18px;
+      background: rgba(37,99,235,0.04);
+      border: 1px solid rgba(37,99,235,0.08);
+      border-radius: var(--radius-sm);
+    }
+    .prog-feat-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+    .prog-feat span { font-size: 0.9rem; color: #334155; font-weight: 500; line-height: 1.5; }
+
+    .prog-cta { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* Visual card (right column) */
+    .prog-visual {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      backdrop-filter: blur(10px);
+    }
+    .prog-visual::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; background: var(--accent-gradient);
+    }
+    .prog-visual-img {
+      width: 100%; height: 240px; overflow: hidden;
+    }
+    .prog-visual-img img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;
+    }
+    .prog-visual-icon {
+      height: 240px; display: flex; align-items: center; justify-content: center;
+      font-size: 5rem; background: var(--bg-secondary);
+    }
+    .prog-visual-body { padding: 28px 32px; }
+    .prog-visual-body h3 {
+      font-family: var(--font-brand); font-size: 1.2rem; font-weight: 800;
+      color: #0a0f1e; margin-bottom: 12px;
+    }
+    .prog-visual-body p { font-size: 0.9rem; color: #475569; line-height: 1.65; }
+    .prog-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .prog-tag {
+      font-size: 0.72rem; font-weight: 600; padding: 4px 12px;
+      border-radius: 50px; background: rgba(37,99,235,0.07);
+      color: var(--accent-blue); border: 1px solid rgba(37,99,235,0.12);
+    }
+
+    /* Stats strip */
+    .eco-stats-strip {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      background: #0f172a; border-radius: var(--radius-lg); overflow: hidden;
+    }
+    .ess-item {
+      padding: 40px 32px; text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.06);
+    }
+    .ess-item:last-child { border-right: none; }
+    .ess-num {
+      font-family: var(--font-heading); font-size: 2.4rem; font-weight: 900;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; margin-bottom: 8px;
+    }
+    .ess-label { font-size: 0.82rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.5px; }
+
+    @media (max-width: 1024px) {
+      .eco-flow-detail { grid-template-columns: 1fr; gap: 20px; }
+      .eco-flow-detail::before { display: none; }
+      .prog-inner, .prog-inner.reverse { grid-template-columns: 1fr; gap: 40px; direction: ltr; }
+      .eco-stats-strip { grid-template-columns: repeat(2, 1fr); }
+      .ess-item:nth-child(2) { border-right: none; }
+      .ess-item:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.06); border-right: 1px solid rgba(255,255,255,0.06); }
+      .ess-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.06); }
+    }
+    @media (max-width: 768px) {
+      .eco-stats-strip { grid-template-columns: 1fr 1fr; }
+      .program-section { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-stars"><canvas id="bg-canvas"></canvas></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/images/PragyanLogomain.png" alt="Pragyan EduSec Logo" class="brand-logo">
+        <div class="brand-text">PRAGYAN <span>EDUSEC</span></div>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="ecosystem.html" class="active">Ecosystem</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="contact.html" class="nav-cta">Contact Us</a>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="hero-badge reveal" style="margin-bottom:20px;">
+        <span class="dot"></span>
+        The Ecosystem in Motion
+      </div>
+      <h1 class="reveal">Where Students Become <span class="gradient-text">Builders</span></h1>
+      <p class="reveal" style="max-width:640px;">Six active programs running across institutions in India — engineering development, research initiatives, hackathons, and innovation labs that transform how students engage with technology.</p>
+
+      <div class="eco-stats-strip reveal" style="margin-top:48px;">
+        <div class="ess-item">
+          <div class="ess-num">6</div>
+          <div class="ess-label">Active Program Types</div>
+        </div>
+        <div class="ess-item">
+          <div class="ess-num">15+</div>
+          <div class="ess-label">Institutions Partnered</div>
+        </div>
+        <div class="ess-item">
+          <div class="ess-num">5000+</div>
+          <div class="ess-label">Engineers Reached</div>
+        </div>
+        <div class="ess-item">
+          <div class="ess-num">2028</div>
+          <div class="ess-label">Full Ecosystem Target</div>
+        </div>
+      </div>
+
+      <!-- Quick Jump Navigation -->
+      <div class="eco-quick-nav reveal" style="margin-top: 40px; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+        <a href="#fdp" class="btn" style="background: rgba(37,99,235,0.08); color: var(--accent-blue); padding: 8px 18px; border-radius: 50px; text-decoration: none; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(37,99,235,0.15); transition: all 0.2s ease;">Faculty Development</a>
+        <a href="#sdp" class="btn" style="background: rgba(37,99,235,0.08); color: var(--accent-blue); padding: 8px 18px; border-radius: 50px; text-decoration: none; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(37,99,235,0.15); transition: all 0.2s ease;">Student Development</a>
+        <a href="#hackathons" class="btn" style="background: rgba(37,99,235,0.08); color: var(--accent-blue); padding: 8px 18px; border-radius: 50px; text-decoration: none; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(37,99,235,0.15); transition: all 0.2s ease;">Hackathons</a>
+        <a href="#research" class="btn" style="background: rgba(37,99,235,0.08); color: var(--accent-blue); padding: 8px 18px; border-radius: 50px; text-decoration: none; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(37,99,235,0.15); transition: all 0.2s ease;">Research Presentations</a>
+        <a href="#labs" class="btn" style="background: rgba(37,99,235,0.08); color: var(--accent-blue); padding: 8px 18px; border-radius: 50px; text-decoration: none; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(37,99,235,0.15); transition: all 0.2s ease;">Innovation Labs</a>
+        <a href="#workshops" class="btn" style="background: rgba(37,99,235,0.08); color: var(--accent-blue); padding: 8px 18px; border-radius: 50px; text-decoration: none; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(37,99,235,0.15); transition: all 0.2s ease;">Technical Workshops</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ecosystem Flow -->
+  <section style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">System Thinking</div>
+        <h2>How the <span class="gradient-text">Ecosystem Works</span></h2>
+        <p>Students don't just attend programs — they move through a complete system designed to transform them from learners into builders, researchers, and innovators.</p>
+      </div>
+
+      <div class="eco-flow-detail stagger-children">
+        <div class="efd-node">
+          <div class="efd-dot"><i data-lucide="graduation-cap" style="width:1.4rem;height:1.4rem;"></i></div>
+          <div class="efd-label">Students</div>
+          <div class="efd-desc">Enter through FDPs, SDPs, and structured programs. Begin building real skills in engineering environments.</div>
+        </div>
+        <div class="efd-node">
+          <div class="efd-dot"><i data-lucide="hammer" style="width:1.4rem;height:1.4rem;"></i></div>
+          <div class="efd-label">Labs</div>
+          <div class="efd-desc">Move into innovation and technical labs. Apply skills to live projects, prototypes, and collaborative builds.</div>
+        </div>
+        <div class="efd-node">
+          <div class="efd-dot"><i data-lucide="radio-tower" style="width:1.4rem;height:1.4rem;"></i></div>
+          <div class="efd-label">Research</div>
+          <div class="efd-desc">Conduct and publish technical research. Present findings at research sessions and cross-institutional events.</div>
+        </div>
+        <div class="efd-node">
+          <div class="efd-dot"><i data-lucide="zap" style="width:1.4rem;height:1.4rem;"></i></div>
+          <div class="efd-label">Products</div>
+          <div class="efd-desc">Build technology products from validated research. Contribute to the Pragyan ecosystem's growing portfolio of real systems.</div>
+        </div>
+        <div class="efd-node">
+          <div class="efd-dot"><i data-lucide="globe" style="width:1.4rem;height:1.4rem;"></i></div>
+          <div class="efd-label">Impact</div>
+          <div class="efd-desc">Create measurable change — for institutions, for India's technology community, and for the global ecosystem.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAM 1: FDP -->
+  <section class="program-section" id="fdp">
+    <div class="container">
+      <div class="prog-inner">
+        <div class="prog-text reveal-left">
+          <div class="prog-num">01</div>
+          <span class="prog-label-tag">For Faculty</span>
+          <h2>Faculty Development Programs</h2>
+          <p>Our FDPs are not generic seminars. They are structured engineering development sessions that equip faculty members with the tools, frameworks, and hands-on experience needed to teach cutting-edge technology — and embed a builder's mindset into their classrooms.</p>
+          <p>Conducted through formal MoU partnerships with colleges and universities, each FDP is customized around the institution's curriculum, student profile, and technology focus areas.</p>
+          <div class="prog-features">
+            <div class="prog-feat">
+              <span class="prog-feat-icon">✦</span>
+              <span>Delivered through MoU-based institutional partnerships</span>
+            </div>
+            <div class="prog-feat">
+              <span class="prog-feat-icon">✦</span>
+              <span>Focus on engineering mindset, not just subject knowledge</span>
+            </div>
+            <div class="prog-feat">
+              <span class="prog-feat-icon">✦</span>
+              <span>Hands-on labs and real technology workshops</span>
+            </div>
+            <div class="prog-feat">
+              <span class="prog-feat-icon">✦</span>
+              <span>Customized for CS, IT, ECE, and allied engineering branches</span>
+            </div>
+          </div>
+          <div class="prog-cta">
+            <a href="contact.html" class="btn btn-primary">Request FDP for Your Institution →</a>
+          </div>
+        </div>
+        <div class="prog-visual reveal-right">
+          <div class="prog-visual-img">
+            <img src="assets/images/workshop-classroom.webp" alt="Faculty Development Program — real session at institution" loading="lazy">
+          </div>
+          <div class="prog-visual-body">
+            <h3>Structured Faculty Development</h3>
+            <p>Multi-day programs designed to transform how teachers engage with and teach technology to their students.</p>
+            <div class="prog-tags">
+              <span class="prog-tag">Engineering</span>
+              <span class="prog-tag">Faculty</span>
+              <span class="prog-tag">MoU Based</span>
+              <span class="prog-tag">Institutions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAM 2: SDP -->
+  <section class="program-section" id="sdp">
+    <div class="container">
+      <div class="prog-inner reverse">
+        <div class="prog-text reveal-right">
+          <div class="prog-num">02</div>
+          <span class="prog-label-tag">For Students</span>
+          <h2>Student Development Programs</h2>
+          <p>SDPs are deep engineering experiences for students pursuing B.E, BCA, MCA, Diploma, and allied technical programs. These are not awareness sessions — they are structured development tracks that move students from classroom theory into real technology building.</p>
+          <p>Students gain exposure to live projects, professional environments, and cross-disciplinary collaboration — all aligned with university requirements and designed for real-world relevance.</p>
+          <div class="prog-features">
+            <div class="prog-feat">
+              <span class="prog-feat-icon">✦</span>
+              <span>Aligned with university and board requirements</span>
+            </div>
+            <div class="prog-feat">
+              <span class="prog-feat-icon">✦</span>
+              <span>Live project exposure with industry mentors</span>
+            </div>
+            <div class="prog-feat">
+              <span class="prog-feat-icon">✦</span>
+              <span>Tracks: Cybersecurity, Cloud, Web Dev, DevOps, AI/ML</span>
+            </div>
+            <div class="prog-feat">
+              <span class="prog-feat-icon">✦</span>
+              <span>Certificate of completion and recommendation</span>
+            </div>
+          </div>
+          <div class="prog-cta">
+            <a href="contact.html" class="btn btn-primary">Join a Student Program →</a>
+          </div>
+        </div>
+        <div class="prog-visual reveal-left">
+          <div class="prog-visual-img">
+            <img src="assets/images/DSC_0226.JPG" alt="Student Development Program — students at Pragyan EduSec" loading="lazy">
+          </div>
+          <div class="prog-visual-body">
+            <h3>Structured Student Tracks</h3>
+            <p>B.E, BCA, MCA, Diploma &amp; more — tailored development programs for every technical discipline.</p>
+            <div class="prog-tags">
+              <span class="prog-tag">Cybersecurity</span>
+              <span class="prog-tag">Cloud</span>
+              <span class="prog-tag">Web Dev</span>
+              <span class="prog-tag">AI/ML</span>
+              <span class="prog-tag">DevOps</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAM 3: Hackathons -->
+  <section class="program-section" id="hackathons">
+    <div class="container">
+      <div class="prog-inner">
+        <div class="prog-text reveal-left">
+          <div class="prog-num">03</div>
+          <span class="prog-label-tag">Competitive Building</span>
+          <h2>Hackathons</h2>
+          <p>Hackathons are our highest-intensity ecosystem events. Multi-team, cross-institutional, time-bound engineering challenges where students don't just ideate — they build. Real prototypes, real code, real systems under pressure.</p>
+          <p>Every hackathon is aligned to a real problem domain — from infrastructure security to AI-driven systems — ensuring the work produced has genuine relevance beyond the event itself.</p>
+          <div class="prog-features">
+            <div class="prog-feat">
+              <span class="prog-feat-icon">✦</span>
+              <span>24–48 hour intensive build events</span>
+            </div>
+            <div class="prog-feat">
+              <span class="prog-feat-icon">✦</span>
+              <span>Cross-institutional participation encouraged</span>
+            </div>
+            <div class="prog-feat">
+              <span class="prog-feat-icon">✦</span>
+              <span>Problem domains: Security, Infrastructure, AI, EdTech</span>
+            </div>
+            <div class="prog-feat">
+              <span class="prog-feat-icon">✦</span>
+              <span>Best projects enter the Pragyan Innovation Pipeline</span>
+            </div>
+          </div>
+          <div class="prog-cta">
+            <a href="contact.html" class="btn btn-primary">Host a Hackathon →</a>
+          </div>
+        </div>
+        <div class="prog-visual reveal-right">
+          <div class="prog-visual-img">
+            <img src="assets/images/hackathonprag.JPG" alt="Hackathons at Pragyan EduSec" loading="lazy">
+          </div>
+          <div class="prog-visual-body">
+            <h3>Build Under Pressure</h3>
+            <p>Where the best student builders compete, collaborate, and create — producing real technology in compressed time.</p>
+            <div class="prog-tags">
+              <span class="prog-tag">24hr Build</span>
+              <span class="prog-tag">Prototypes</span>
+              <span class="prog-tag">Cross-Institutional</span>
+              <span class="prog-tag">Innovation Pipeline</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAM 4: Research Presentations -->
+  <section class="program-section" id="research">
+    <div class="container">
+      <div class="prog-inner reverse">
+        <div class="prog-text reveal-right">
+          <div class="prog-num">04</div>
+          <span class="prog-label-tag">Knowledge Sharing</span>
+          <h2>Research Presentations</h2>
+          <p>Our Research Presentation sessions are structured knowledge events where students and faculty present their technical work, findings, and explorations to a broader academic audience. These sessions build the research culture that is often missing in Indian engineering colleges.</p>
+          <p>Topics range from security engineering and cloud systems to AI experimentation and technical pedagogy — all grounded in real exploration, not textbook summaries.</p>
+          <div class="prog-features">
+            <div class="prog-feat">
+              <span class="prog-feat-icon">✦</span>
+              <span>Structured research presentation sessions per institution</span>
+            </div>
+            <div class="prog-feat">
+              <span class="prog-feat-icon">✦</span>
+              <span>Peer review and cross-team feedback culture</span>
+            </div>
+            <div class="prog-feat">
+              <span class="prog-feat-icon">✦</span>
+              <span>Best research enters the Pragyan Knowledge Library</span>
+            </div>
+            <div class="prog-feat">
+              <span class="prog-feat-icon">✦</span>
+              <span>Open to students, faculty, and institutional researchers</span>
+            </div>
+          </div>
+          <div class="prog-cta">
+            <a href="blogs.html" class="btn btn-primary">View Research Library →</a>
+          </div>
+        </div>
+        <div class="prog-visual reveal-left">
+          <div class="prog-visual-icon" style="background:#0f172a;flex-direction:column;gap:16px;">
+            <i data-lucide="radio-tower" style="width:4rem;height:4rem;color:white;"></i>
+            <span style="font-family:var(--font-brand);font-size:1.1rem;font-weight:800;color:white;text-align:center;max-width:180px;line-height:1.3;">Know it. Research it. Present it.</span>
+          </div>
+          <div class="prog-visual-body">
+            <h3>Building Research Culture</h3>
+            <p>Forum-style knowledge events where technical explorations are shared, challenged, and expanded upon across institutions.</p>
+            <div class="prog-tags">
+              <span class="prog-tag">Research</span>
+              <span class="prog-tag">Knowledge</span>
+              <span class="prog-tag">Technical</span>
+              <span class="prog-tag">Publications</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAM 5: Innovation Labs -->
+  <section class="program-section" id="labs">
+    <div class="container">
+      <div class="prog-inner">
+        <div class="prog-text reveal-left">
+          <div class="prog-num">05</div>
+          <span class="prog-label-tag">Build & Experiment</span>
+          <h2>Innovation Labs</h2>
+          <p>Innovation Labs are Pragyan EduSec's flagship physical and virtual environments where students move beyond learning and begin building systems. Equipped with tools, structured by engineering methodology, and facilitated by mentors, these labs are where ideas become prototypes.</p>
+          <p>Labs operate as an ongoing program — not a one-time event. Students return, iterate, and build together over weeks and months, creating a genuine culture of engineering experimentation within their institution.</p>
+          <div class="prog-features">
+            <div class="prog-feat">
+              <span class="prog-feat-icon">✦</span>
+              <span>Ongoing lab model — not a one-time event</span>
+            </div>
+            <div class="prog-feat">
+              <span class="prog-feat-icon">✦</span>
+              <span>Structured by engineering methodology and design thinking</span>
+            </div>
+            <div class="prog-feat">
+              <span class="prog-feat-icon">✦</span>
+              <span>Prototype development, iteration, and documentation</span>
+            </div>
+            <div class="prog-feat">
+              <span class="prog-feat-icon">✦</span>
+              <span>Best lab outputs enter the Pragyan Innovation Pipeline</span>
+            </div>
+          </div>
+          <div class="prog-cta">
+            <a href="contact.html" class="btn btn-primary">Set Up a Lab at Your Institution →</a>
+          </div>
+        </div>
+        <div class="prog-visual reveal-right">
+          <div class="prog-visual-icon" style="background:#0f172a;flex-direction:column;gap:16px;">
+            <i data-lucide="hammer" style="width:4rem;height:4rem;color:white;"></i>
+            <span style="font-family:var(--font-brand);font-size:1.1rem;font-weight:800;color:white;text-align:center;max-width:180px;line-height:1.3;">Prototype. Iterate. Scale.</span>
+          </div>
+          <div class="prog-visual-body">
+            <h3>Where Builders Operate</h3>
+            <p>Structured innovation environments embedded inside institutions — turning classrooms into engineering labs on an ongoing basis.</p>
+            <div class="prog-tags">
+              <span class="prog-tag">Prototypes</span>
+              <span class="prog-tag">Ongoing</span>
+              <span class="prog-tag">Mentored</span>
+              <span class="prog-tag">Engineering</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAM 6: Technical Workshops -->
+  <section class="program-section" id="workshops">
+    <div class="container">
+      <div class="prog-inner reverse">
+        <div class="prog-text reveal-right">
+          <div class="prog-num">06</div>
+          <span class="prog-label-tag">Intensive Learning</span>
+          <h2>Technical Workshops</h2>
+          <p>High-intensity, domain-specific workshops that go deep into a single technology area. From cybersecurity infrastructure to cloud architecture and AI systems — these workshops are designed for students and faculty who want to master a subject through doing, not listening.</p>
+          <p>Ranging from 1-day awareness sessions to 3–5 day hands-on bootcamps, every workshop is structured around real tools, real labs, and real output — not slides and lectures.</p>
+          <div class="prog-features">
+            <div class="prog-feat">
+              <span class="prog-feat-icon">✦</span>
+              <span>1-Day Awareness Workshops to 5-Day Bootcamps</span>
+            </div>
+            <div class="prog-feat">
+              <span class="prog-feat-icon">✦</span>
+              <span>Hands-on labs and practical exercises throughout</span>
+            </div>
+            <div class="prog-feat">
+              <span class="prog-feat-icon">✦</span>
+              <span>Domains: Security, Cloud, AI, Networks, DevOps</span>
+            </div>
+            <div class="prog-feat">
+              <span class="prog-feat-icon">✦</span>
+              <span>Can be conducted standalone or as part of SDP/FDP</span>
+            </div>
+          </div>
+          <div class="prog-cta">
+            <a href="contact.html" class="btn btn-primary">Request a Workshop →</a>
+          </div>
+        </div>
+        <div class="prog-visual reveal-left">
+          <div class="prog-visual-img">
+            <img src="assets/images/pragprog.JPG" alt="Technical Workshop — hands-on session at institution" loading="lazy">
+          </div>
+          <div class="prog-visual-body">
+            <h3>Depth Over Breadth</h3>
+            <p>From 1-day immersions to 5-day bootcamps — each workshop is guided by a single goal: real understanding through real doing.</p>
+            <div class="prog-tags">
+              <span class="prog-tag">Bootcamp</span>
+              <span class="prog-tag">Hands-On</span>
+              <span class="prog-tag">Security</span>
+              <span class="prog-tag">Cloud</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding: 80px 0; background: var(--bg-secondary);">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <h2>Build the <span class="gradient-text">Ecosystem</span><br>at Your Institution</h2>
+        <p>Whether you're a Dean, Director, or Academic Head — let's design the right program mix for your institution's engineering culture.</p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+          <a href="contact.html" class="btn btn-primary">Partner With Us →</a>
+          <a href="blogs.html" class="btn btn-secondary">View Research Library</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-brand">
+            <img src="assets/images/PragyanLogo_White.png" alt="Pragyan EduSec Logo" class="brand-logo">
+            <div class="brand-text">PRAGYAN <span>EDUSEC</span></div>
+          </a>
+          <p>Building India's Technology &amp; Innovation Ecosystem — one institution at a time.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="ecosystem.html">Ecosystem</a>
+            <a href="blogs.html">Research &amp; Blogs</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+        <div>
+          <h4>Programs</h4>
+          <div class="footer-links">
+            <a href="#fdp">Faculty Development (FDP)</a>
+            <a href="#sdp">Student Development (SDP)</a>
+            <a href="#hackathons">Hackathons</a>
+            <a href="#research">Research Presentations</a>
+            <a href="#labs">Innovation Labs</a>
+            <a href="#workshops">Technical Workshops</a>
+          </div>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <div class="footer-links">
+            <a href="mailto:anantnag@pragyanedusec.in">anantnag@pragyanedusec.in</a>
+            <a href="tel:+917618741171">+91 7618741171</a>
+            <a>Hubballi, Karnataka</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Pragyan EduSec. Building the Next Generation Technology Ecosystem.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/company/pragyan-edusec/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="Follow us on LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://www.instagram.com/pragyanedusec?igsh=MTRwOG9zZ2Njb3JsaQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Follow us on Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/circuit-bg.js"></script>
+  <script src="js/main.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
