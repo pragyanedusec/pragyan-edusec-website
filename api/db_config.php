@@ -25,7 +25,7 @@
 define('DB_HOST', 'localhost');                    // Keep as 'localhost' for Hostinger
 define('DB_NAME', 'u734784864_pragyan_db');        // Actual database name
 define('DB_USER', 'u734784864_admin');             // Actual database username  
-define('DB_PASS', 'PragyanDb@2026!');              // Actual database password
+define('DB_PASS', 'Pragyanedusec@888');            // Actual database password
 // ========================================================================
 
 function get_db_connection() {
