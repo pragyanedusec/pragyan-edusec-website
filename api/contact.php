@@ -69,22 +69,8 @@ try {
     );
     $stmt->execute([$name, $email, $phone, $subject, $institution, $message, $inquiry_type]);
 
-    // Send email notification to site owner
-    $to = 'anantnag@pragyanedusec.in';
-    $email_subject = "New Contact Form: " . ($subject ?: 'General Inquiry') . " from $name";
-    $email_body = "New message from the Pragyan EduSec website:\n\n";
-    $email_body .= "Name: $name\n";
-    $email_body .= "Email: $email\n";
-    $email_body .= "Phone: $phone\n";
-    $email_body .= "Institution: $institution\n";
-    $email_body .= "Subject: $subject\n";
-    $email_body .= "Inquiry Type: $inquiry_type\n";
-    $email_body .= "Message:\n$message\n\n";
-    $email_body .= "---\nSubmitted at: " . date('Y-m-d H:i:s');
-    $headers = "From: noreply@pragyanedusec.in\r\n";
-    $headers .= "Reply-To: $email\r\n";
-
-    @mail($to, $email_subject, $email_body, $headers);
+    // NOTE: mail() removed — was blocking PHP and causing form to hang.
+    // View submissions at: hPanel → Databases → Enter phpMyAdmin → contact_messages table
 
     echo json_encode(['status' => 'success', 'message' => 'Thank you for your message! We will get back to you soon.']);
 } catch (PDOException $e) {
