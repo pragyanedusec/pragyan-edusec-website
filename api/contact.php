@@ -5,11 +5,15 @@
  * Stores data in Hostinger MySQL database.
  */
 
+// Set max execution time to 10 seconds - prevents hanging forever
+set_time_limit(10);
+
 header('Content-Type: application/json');
 
 // Allow CORS for same-origin requests
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST');
+header('Access-Control-Allow-Headers: Content-Type');
 
 require_once 'db_config.php';
 
