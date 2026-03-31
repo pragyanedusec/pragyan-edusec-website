@@ -189,7 +189,7 @@
             <li>Hackathons and Research Presentation events</li>
             <li>MoU-based formal partnership framework</li>
           </ul>
-          <a href="#contact-form" class="btn btn-primary" style="text-align:center;justify-content:center;">Explore Institutional Partnership →</a>
+          <a href="#contact-section" class="btn btn-primary" style="text-align:center;justify-content:center;">Explore Institutional Partnership →</a>
         </div>
 
         <!-- Students track -->
@@ -205,7 +205,7 @@
             <li>Research contribution and co-authorship</li>
             <li>Innovation Lab access at your institution</li>
           </ul>
-          <a href="#contact-form" class="btn btn-primary" style="text-align:center;justify-content:center;background:var(--accent-gradient);">Join the Ecosystem →</a>
+          <a href="#contact-section" class="btn btn-primary" style="text-align:center;justify-content:center;background:var(--accent-gradient);">Join the Ecosystem →</a>
         </div>
       </div>
     </div>
@@ -246,7 +246,7 @@
   </section>
 
   <!-- Contact Form + Info -->
-  <section id="contact-form">
+  <section id="contact-section">
     <div class="container">
       <div class="contact-grid-v2">
         <!-- Info side -->
@@ -308,7 +308,7 @@
               <button class="inq-btn" onclick="this.parentElement.querySelectorAll('.inq-btn').forEach(b=>b.classList.remove('active'));this.classList.add('active');"><i data-lucide="graduation-cap" style="width:0.9rem;height:0.9rem;display:inline;vertical-align:-2px;margin-right:4px;"></i> Student / Researcher</button>
             </div>
 
-            <form class="contact-form" id="contact-form" action="api/contact.php" method="POST">
+            <form class="contact-form" id="message-form" action="api/contact.php" method="POST">
               <div class="form-row">
                 <div class="form-group">
                   <label for="name">Full Name *</label>

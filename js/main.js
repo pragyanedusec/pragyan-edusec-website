@@ -229,7 +229,8 @@ function initParticles() {
    Contact Form Validation
    ============================ */
 function initContactForm() {
-  const form = document.getElementById('contact-form');
+  // Use 'message-form' id (section anchor uses 'contact-section' to avoid id conflict)
+  const form = document.getElementById('message-form');
   if (!form) return;
 
   form.addEventListener('submit', (e) => {
@@ -265,7 +266,7 @@ function initContactForm() {
 
     if (valid) {
       // Show loading state
-      const btn = form.querySelector('.btn-primary');
+      const btn = form.querySelector('[type="submit"]');
       const originalText = btn.innerHTML;
       btn.innerHTML = '<span class="loading-spinner"></span> Sending...';
       btn.disabled = true;
@@ -273,25 +274,33 @@ function initContactForm() {
       // Prepare form data
       const formData = new FormData(form);
 
+      // 15-second timeout so button never stays stuck forever
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 15000);
+
       // Send to backend
       fetch('api/contact.php', {
         method: 'POST',
-        body: formData
+        body: formData,
+        signal: controller.signal
       })
-      .then(response => response.json())
+      .then(response => {
+        clearTimeout(timeoutId);
+        if (!response.ok) {
+          throw new Error('Server returned status ' + response.status);
+        }
+        return response.json();
+      })
       .then(data => {
         if (data.status === 'success') {
-          // Success animation
-          btn.innerHTML = '✓ ' + data.message;
+          btn.innerHTML = '✓ Message Sent!';
           btn.style.background = '#22c55e';
           form.reset();
         } else {
-          // Backend validation error
           btn.innerHTML = '✕ Error';
           btn.style.background = '#ef4444';
-          alert(data.message || 'Something went wrong.');
+          alert(data.message || 'Something went wrong. Please try again.');
         }
-
         setTimeout(() => {
           btn.innerHTML = originalText;
           btn.style.background = '';
@@ -299,11 +308,15 @@ function initContactForm() {
         }, 4000);
       })
       .catch(error => {
-        console.error('Error:', error);
-        btn.innerHTML = '✕ Network Error';
+        clearTimeout(timeoutId);
+        console.error('Form submit error:', error);
+        btn.innerHTML = '✕ Failed to Send';
         btn.style.background = '#ef4444';
-        alert('Could not connect to the server. Please check your internet connection.');
-
+        if (error.name === 'AbortError') {
+          alert('Request timed out. The server is taking too long. Please try again.');
+        } else {
+          alert('Could not connect to the server. Please check your internet connection and try again.');
+        }
         setTimeout(() => {
           btn.innerHTML = originalText;
           btn.style.background = '';
