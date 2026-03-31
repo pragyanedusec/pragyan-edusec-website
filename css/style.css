@@ -1446,7 +1446,7 @@ section {
     justify-content: flex-start;
     gap: 0;
     padding: 0;
-    z-index: 1000;
+    z-index: 1100;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     box-shadow: none;
