@@ -244,9 +244,11 @@ section {
 .navbar.scrolled .nav-brand .brand-text span {
   font-size: 1rem;
 }
-.navbar.scrolled .nav-links {
-  flex-direction: row; /* Switch back to horizontal for compact scrolled view */
-  gap: 20px;
+@media (min-width: 1025px) {
+  .navbar.scrolled .nav-links {
+    flex-direction: row;
+    gap: 20px;
+  }
 }
 .navbar .container {
   display: flex !important;
@@ -388,6 +390,17 @@ section {
 
 .nav-toggle.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile-only elements: hidden on desktop */
+.mobile-menu-header,
+.mobile-menu-close {
+  display: none;
+}
+
+/* On desktop: nav-links-wrapper behaves like a flex row */
+.mobile-nav-links-wrapper {
+  display: contents; /* Makes children flow directly inside .nav-links flex */
 }
 
 /* ============================
@@ -1402,19 +1415,23 @@ section {
 /* ============================
    Responsive Design
    ============================ */
+
+/* --- Tablet: 1024px and below --- */
 @media (max-width: 1024px) {
   .navbar .container {
     display: flex;
     justify-content: space-between;
   }
-  
+
+  /* Scale brand down slightly for tablet */
   .navbar .nav-brand {
     margin: 0;
     justify-self: flex-start;
-    scale: 0.85; /* Scale down slightly for mobile to fit */
+    scale: 0.85;
     transform-origin: left center;
   }
 
+  /* === MOBILE MENU — PROFESSIONAL WHITE THEME === */
   .nav-links {
     display: none;
     position: fixed;
@@ -1422,28 +1439,174 @@ section {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(6, 11, 30, 0.98);
-    backdrop-filter: blur(20px);
+    height: 100dvh;
+    background: #ffffff;
     flex-direction: column;
-    justify-content: center;
-    gap: 8px;
-    padding: 24px;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 0;
     z-index: 1000;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: none;
   }
 
   .nav-links.active {
     display: flex;
+    animation: menuFadeIn 0.25s ease;
   }
 
-  .nav-links a {
-    font-size: 1.2rem;
-    padding: 14px 24px;
+  @keyframes menuFadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* --- Mobile Menu Header: Logo + Close Button --- */
+  .mobile-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    text-align: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;
+    background: #ffffff;
   }
 
+  .mobile-menu-logo {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  .mobile-menu-close {
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: rgba(0, 0, 0, 0.04);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #374151;
+    transition: background 0.2s ease, color 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .mobile-menu-close:hover {
+    background: rgba(37, 99, 235, 0.08);
+    border-color: rgba(37, 99, 235, 0.2);
+    color: #2563eb;
+  }
+
+  /* --- Mobile Menu: Nav Links Container --- */
+  .mobile-menu-header {
+    display: flex; /* Override the desktop display:none */
+  }
+
+  .mobile-nav-links-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    padding: 16px 20px;
+    gap: 4px;
+    flex: 1;
+  }
+
+  /* Remove the old ::before spacer */
+  .nav-links::before {
+    display: none;
+  }
+
+  /* --- Mobile Menu: Link Styles --- */
+  .nav-links a {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 1.0rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: #1e293b;
+    padding: 14px 20px;
+    width: 100%;
+    text-align: left;
+    text-decoration: none;
+    border-radius: 10px;
+    margin: 0;
+    background: transparent;
+    transition: all 0.18s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .nav-links a:hover {
+    color: #2563eb;
+    background: rgba(37, 99, 235, 0.06);
+  }
+
+  /* Active page link */
+  .nav-links a.active {
+    color: #2563eb;
+    font-weight: 600;
+    background: rgba(37, 99, 235, 0.08);
+  }
+
+  .nav-links a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 60%;
+    background: linear-gradient(180deg, #2563eb, #06b6d4);
+    border-radius: 0 3px 3px 0;
+  }
+
+  /* Divider before CTA */
+  .nav-links a.nav-cta {
+    margin-top: 12px;
+    background: linear-gradient(135deg, #2563eb, #06b6d4) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    padding: 14px 20px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.22);
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  .nav-links a.nav-cta::after {
+    display: none !important;
+  }
+
+  .nav-links a.nav-cta:hover {
+    box-shadow: 0 6px 24px rgba(37, 99, 235, 0.32) !important;
+    transform: translateY(-1px);
+  }
+
+  /* --- Hamburger visible on tablet/mobile --- */
   .nav-toggle {
     display: flex;
+  }
+
+  .nav-toggle span {
+    background: #1e293b;
+  }
+
+  .nav-toggle.active span {
+    background: #1e293b;
+  }
+
+  /* Hide toggle when menu is open (close button handles it) */
+  .nav-toggle.active {
+    display: none;
   }
 
   .hero-visual {
@@ -1469,39 +1632,27 @@ section {
   }
 }
 
+/* --- Mobile: 768px and below --- */
 @media (max-width: 768px) {
   section {
     padding: 70px 0;
   }
 
-  .nav-links {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(6, 11, 30, 0.98);
-    backdrop-filter: blur(20px);
-    flex-direction: column;
-    justify-content: center;
-    gap: 8px;
-    padding: 24px;
+  /* Navbar adjustments for small phones */
+  .navbar .nav-brand {
+    scale: 0.75;
+    transform-origin: left center;
   }
 
-  .nav-links.active {
-    display: flex;
+  .navbar .brand-logo {
+    height: 64px;
   }
 
+  /* Mobile menu inherits white theme from 1024px breakpoint */
   .nav-links a {
-    font-size: 1.2rem;
-    padding: 14px 24px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-toggle {
-    display: flex;
+    font-size: 1rem;
+    padding: 16px 24px;
+    margin: 2px 20px;
   }
 
   .offerings-grid,
@@ -1546,6 +1697,7 @@ section {
   }
 }
 
+/* --- Small phones: 480px and below --- */
 @media (max-width: 480px) {
   .container {
     padding: 0 16px;
@@ -1558,6 +1710,17 @@ section {
 
   .stat-number {
     font-size: 2rem;
+  }
+
+  .navbar .nav-brand {
+    scale: 0.7;
+    transform-origin: left center;
+  }
+
+  .nav-links a {
+    font-size: 0.95rem;
+    padding: 15px 20px;
+    margin: 2px 16px;
   }
 }
 
