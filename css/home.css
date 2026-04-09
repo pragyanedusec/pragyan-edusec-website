@@ -920,9 +920,36 @@
   }
 
   .eco-connector {
-    flex-direction: row;
-    transform: rotate(90deg);
-    min-width: 40px;
+    flex-direction: column;
+    align-items: center;
+    min-width: unset;
+    width: 100%;
+    gap: 4px;
+  }
+
+  .eco-arrow-line {
+    width: 2px;
+    height: 28px;
+    background: var(--accent-gradient);
+    opacity: 0.4;
+    position: relative;
+  }
+
+  .eco-arrow-line::after {
+    content: '↓';
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.85rem;
+    right: unset;
+    top: unset;
+  }
+
+  .eco-arrow-label {
+    margin-top: 14px;
+    font-size: 0.65rem;
+    white-space: nowrap;
   }
 
   .hero-flow {
