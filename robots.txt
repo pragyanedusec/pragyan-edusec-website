@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /sql/
+
+Sitemap: https://www.pragyanedusec.in/sitemap.xml
