@@ -3,6 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0f1e">
+
+  <!-- ===== GEO / LOCAL SEO ===== -->
+  <meta name="geo.region" content="IN-KA">
+  <meta name="geo.placename" content="Hubballi, Karnataka, India">
+  <meta name="geo.position" content="15.3647;75.1240">
+  <meta name="ICBM" content="15.3647, 75.1240">
   <title>About Us — Pragyan EduSec | MSME & DPIIT Recognized Technology Ecosystem</title>
   <meta name="description" content="Learn about Pragyan EduSec — a MSME & DPIIT Startup India recognized Technology & Innovation Ecosystem founded in 2024 in Hubballi, Karnataka. Meet the founding team and our mission to build India's next generation of engineers.">
   <meta name="robots" content="index, follow">
@@ -18,11 +25,26 @@
   <meta name="twitter:title" content="About Pragyan EduSec">
   <meta name="twitter:description" content="Government-recognized Technology & Innovation Ecosystem — building India's next generation of engineers from Hubballi, Karnataka.">
   <meta name="twitter:image" content="https://www.pragyanedusec.in/assets/images/PragyanLogomain.png">
+  <!-- ===== BREADCRUMB SCHEMA ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.pragyanedusec.in/" },
+      { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://www.pragyanedusec.in/about.html" }
+    ]
+  }
+  </script>
+
+  <!-- Performance: preconnect to external origins -->
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/home.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>∞</text></svg>">
-  <!-- Lucide pinned version for better CDN caching -->
-  <script src="https://unpkg.com/lucide@0.263.1/dist/umd/lucide.min.js"></script>
+  <!-- Lucide deferred for performance -->
+  <script src="https://unpkg.com/lucide@0.263.1/dist/umd/lucide.min.js" defer></script>
   <style>
     /* About-specific styles */
     .philosophy-grid {
@@ -360,7 +382,7 @@
   <nav class="navbar" id="navbar">
     <div class="container">
       <a href="index.html" class="nav-brand">
-        <img src="assets/images/PragyanLogomain.png" alt="Pragyan EduSec Logo" class="brand-logo">
+        <img src="assets/images/PragyanLogomain.png" alt="Pragyan EduSec — Technology and Innovation Ecosystem" class="brand-logo" width="120" height="40" loading="eager">
         <div class="brand-text">PRAGYAN <span>EDUSEC</span></div>
       </a>
       <div class="nav-links" id="nav-links">
@@ -538,7 +560,7 @@
         <!-- Amaan Muchale -->
         <div class="team-card-v2">
           <div class="team-avatar-v2">
-            <img src="assets/images/team-amaan.png" alt="Amaan Muchale — Co-Founder & COO" loading="lazy">
+            <img src="assets/images/team-amaan.jpg" alt="Amaan Muchale — Co-Founder & COO" loading="lazy">
           </div>
           <span class="team-role-v2">Co-Founder &amp; COO</span>
           <h3>Amaan Muchale</h3>
@@ -548,7 +570,7 @@
         <!-- Anantnag B Kavadikeri — CEO -->
         <div class="team-card-v2 ceo-card">
           <div class="team-avatar-v2">
-            <img src="assets/images/Anantnag.JPG.jpeg" alt="Anantnag B Kavadikeri — Founder & CEO" loading="lazy">
+            <img src="assets/images/Anantnag.JPG.jpg" alt="Anantnag B Kavadikeri — Founder & CEO" loading="lazy">
           </div>
           <span class="team-role-v2">★ Founder &amp; CEO</span>
           <h3>Anantnag B Kavadikeri</h3>
@@ -706,7 +728,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="nav-brand">
-            <img src="assets/images/PragyanLogo_White.png" alt="Pragyan EduSec Logo" class="brand-logo">
+            <img src="assets/images/PragyanLogo_White.jpg" alt="Pragyan EduSec Logo" class="brand-logo">
             <div class="brand-text">PRAGYAN <span>EDUSEC</span></div>
           </a>
           <p>Building India's Technology &amp; Innovation Ecosystem — one institution at a time.</p>
@@ -751,6 +773,12 @@
 
   <script src="js/circuit-bg.js"></script>
   <script src="js/main.js"></script>
-  <script>lucide.createIcons();</script>
+  <script>
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() { lucide.createIcons(); });
+    } else {
+      lucide.createIcons();
+    }
+  </script>
 </body>
 </html>

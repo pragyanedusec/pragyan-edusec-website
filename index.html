@@ -3,6 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0f1e">
+
+  <!-- ===== GEO / LOCAL SEO ===== -->
+  <meta name="geo.region" content="IN-KA">
+  <meta name="geo.placename" content="Hubballi, Karnataka, India">
+  <meta name="geo.position" content="15.3647;75.1240">
+  <meta name="ICBM" content="15.3647, 75.1240">
 
   <!-- ===== PRIMARY SEO ===== -->
   <title>Pragyan EduSec — Technology & Innovation Ecosystem | Hubballi, India</title>
@@ -84,20 +91,60 @@
   }
   </script>
 
-  <!-- ===== SITELINKS NAVIGATION SCHEMA (tells Google to show Home/About/Ecosystem links under search result) ===== -->
+  <!-- ===== SITELINKS SEARCH BOX (standalone — correct implementation) ===== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Pragyan EduSec Navigation",
-    "itemListElement": [
+    "@type": "WebSite",
+    "url": "https://www.pragyanedusec.in",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.pragyanedusec.in/?s={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- ===== LOCAL BUSINESS SCHEMA ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://www.pragyanedusec.in/#localbusiness",
+    "name": "Pragyan EduSec",
+    "description": "Government-recognized Technology & Innovation Ecosystem in Hubballi, Karnataka. Engineering programs, FDP, SDP, hackathons, and research initiatives for students and institutions.",
+    "url": "https://www.pragyanedusec.in",
+    "telephone": "+91-7618741171",
+    "email": "anantnag@pragyanedusec.in",
+    "logo": "https://www.pragyanedusec.in/assets/images/PragyanLogomain.png",
+    "image": "https://www.pragyanedusec.in/assets/images/PragyanLogomain.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "No. 83 Lingarajnagar (North), Patil Layout",
+      "addressLocality": "Hubballi",
+      "addressRegion": "Karnataka",
+      "postalCode": "580031",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 15.3647,
+      "longitude": 75.1240
+    },
+    "openingHoursSpecification": [
       {
-        "@type": "SiteLinksSearchBox",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://www.pragyanedusec.in/{search_term_string}"
-        }
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "09:00",
+        "closes": "18:00"
       }
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/company/pragyan-edusec/",
+      "https://www.instagram.com/pragyanedusec"
     ]
   }
   </script>
@@ -143,11 +190,17 @@
   }
   </script>
 
+  <!-- Performance: preconnect to external origins -->
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <!-- Preload critical CSS -->
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="preload" href="css/home.css" as="style">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/home.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>∞</text></svg>">
-  <!-- Lucide pinned version for better CDN caching -->
-  <script src="https://unpkg.com/lucide@0.263.1/dist/umd/lucide.min.js"></script>
+  <!-- Lucide deferred for performance -->
+  <script src="https://unpkg.com/lucide@0.263.1/dist/umd/lucide.min.js" defer></script>
   <style>
     .pillar-icon i, .eco-node-icon i, .eco-note-icon i, .program-icon i, .ps-icon i { width: 1em; height: 1em; }
   </style>
@@ -163,13 +216,13 @@
   <nav class="navbar" id="navbar">
     <div class="container">
       <a href="index.html" class="nav-brand">
-        <img src="assets/images/PragyanLogomain.png" alt="Pragyan EduSec Logo" class="brand-logo">
+        <img src="assets/images/PragyanLogomain.png" alt="Pragyan EduSec — Technology and Innovation Ecosystem, Hubballi" class="brand-logo" width="120" height="40" loading="eager">
         <div class="brand-text">PRAGYAN <span>EDUSEC</span></div>
       </a>
       <div class="nav-links" id="nav-links">
         <!-- Mobile menu header: white logo + close button -->
         <div class="mobile-menu-header">
-          <img src="assets/images/PragyanLogomain.png" alt="Pragyan EduSec Logo" class="mobile-menu-logo">
+          <img src="assets/images/PragyanLogomain.png" alt="Pragyan EduSec Logo" class="mobile-menu-logo" width="100" height="33" loading="eager">
           <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">✕</button>
         </div>
         <!-- Nav links wrapper -->
@@ -600,7 +653,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="nav-brand">
-            <img src="assets/images/PragyanLogo_White.png" alt="Pragyan EduSec Logo" class="brand-logo">
+            <img src="assets/images/PragyanLogo_White.jpg" alt="Pragyan EduSec — Technology and Innovation Ecosystem" class="brand-logo" width="120" height="40" loading="lazy">
             <div class="brand-text">PRAGYAN <span>EDUSEC</span></div>
           </a>
           <p style="margin-top:16px;">Building the Next Generation Technology Ecosystem — for engineers, researchers, and institutions across India.</p>
@@ -646,6 +699,13 @@
 
   <script src="js/circuit-bg.js"></script>
   <script src="js/main.js"></script>
-  <script>lucide.createIcons();</script>
+  <!-- Defer icon creation until after DOMContentLoaded for performance -->
+  <script>
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() { lucide.createIcons(); });
+    } else {
+      lucide.createIcons();
+    }
+  </script>
 </body>
 </html>
