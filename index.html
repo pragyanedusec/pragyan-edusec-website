@@ -84,6 +84,65 @@
   }
   </script>
 
+  <!-- ===== SITELINKS NAVIGATION SCHEMA (tells Google to show Home/About/Ecosystem links under search result) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Pragyan EduSec Navigation",
+    "itemListElement": [
+      {
+        "@type": "SiteLinksSearchBox",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.pragyanedusec.in/{search_term_string}"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Pragyan EduSec Site Navigation",
+    "description": "Main navigation pages of Pragyan EduSec website",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "url": "https://www.pragyanedusec.in/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About Us",
+        "url": "https://www.pragyanedusec.in/about.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Ecosystem",
+        "url": "https://www.pragyanedusec.in/ecosystem.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Research & Blogs",
+        "url": "https://www.pragyanedusec.in/blogs.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Contact Us",
+        "url": "https://www.pragyanedusec.in/contact.html"
+      }
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/home.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>∞</text></svg>">
