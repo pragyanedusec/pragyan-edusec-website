@@ -85,8 +85,8 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/home.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>âˆž</text></svg>">
-  <!-- Lucide deferred for performance -->
-  <script src="https://unpkg.com/lucide@0.263.1/dist/umd/lucide.min.js" defer></script>
+  <!-- Lucide: load at end of head, non-blocking via defer, icons created on load -->
+  <script src="https://unpkg.com/lucide@0.263.1/dist/umd/lucide.min.js" defer onload="lucide.createIcons()"></script>
   <style>
     /* Ecosystem flow ”” detailed */
     .eco-flow-detail {
@@ -343,34 +343,34 @@
       <div class="section-header reveal">
         <div class="section-label">System Thinking</div>
         <h2>How the <span class="gradient-text">Ecosystem Works</span></h2>
-        <p>Students don't just attend programs ”” they move through a complete system designed to transform them from learners into builders, researchers, and innovators.</p>
+        <p>Students don’t just attend programs — they move through a complete system designed to transform them from learners into builders, researchers, and innovators.</p>
       </div>
 
       <div class="eco-flow-detail stagger-children">
         <div class="efd-node">
-          <div class="efd-dot"><i data-lucide="graduation-cap" style="width:1.4rem;height:1.4rem;"></i></div>
+          <div class="efd-dot"><i data-lucide="graduation-cap" style="width:1.6rem;height:1.6rem;"></i></div>
           <div class="efd-label">Students</div>
           <div class="efd-desc">Enter through FDPs, SDPs, and structured programs. Begin building real skills in engineering environments.</div>
         </div>
         <div class="efd-node">
-          <div class="efd-dot"><i data-lucide="hammer" style="width:1.4rem;height:1.4rem;"></i></div>
+          <div class="efd-dot"><i data-lucide="flask-conical" style="width:1.6rem;height:1.6rem;"></i></div>
           <div class="efd-label">Labs</div>
           <div class="efd-desc">Move into innovation and technical labs. Apply skills to live projects, prototypes, and collaborative builds.</div>
         </div>
         <div class="efd-node">
-          <div class="efd-dot"><i data-lucide="radio-tower" style="width:1.4rem;height:1.4rem;"></i></div>
+          <div class="efd-dot"><i data-lucide="microscope" style="width:1.6rem;height:1.6rem;"></i></div>
           <div class="efd-label">Research</div>
           <div class="efd-desc">Conduct and publish technical research. Present findings at research sessions and cross-institutional events.</div>
         </div>
         <div class="efd-node">
-          <div class="efd-dot"><i data-lucide="zap" style="width:1.4rem;height:1.4rem;"></i></div>
+          <div class="efd-dot"><i data-lucide="cpu" style="width:1.6rem;height:1.6rem;"></i></div>
           <div class="efd-label">Products</div>
           <div class="efd-desc">Build technology products from validated research. Contribute to the Pragyan ecosystem's growing portfolio of real systems.</div>
         </div>
         <div class="efd-node">
-          <div class="efd-dot"><i data-lucide="globe" style="width:1.4rem;height:1.4rem;"></i></div>
+          <div class="efd-dot"><i data-lucide="globe" style="width:1.6rem;height:1.6rem;"></i></div>
           <div class="efd-label">Impact</div>
-          <div class="efd-desc">Create measurable change ”” for institutions, for India's technology community, and for the global ecosystem.</div>
+          <div class="efd-desc">Create measurable change — for institutions, for India's technology community, and for the global ecosystem.</div>
         </div>
       </div>
     </div>
@@ -780,12 +780,9 @@
 
   <script src="js/circuit-bg.js"></script>
   <script src="js/main.js"></script>
+  <!-- Lucide createIcons also called here as fallback if onload already fired -->
   <script>
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function() { lucide.createIcons(); });
-    } else {
-      lucide.createIcons();
-    }
+    if (typeof lucide !== 'undefined') { lucide.createIcons(); }
   </script>
 </body>
 </html>

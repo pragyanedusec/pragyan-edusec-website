@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -101,7 +101,7 @@
   <link rel="stylesheet" href="css/home.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>âˆž</text></svg>">
   <!-- Lucide deferred for performance -->
-  <script src="https://unpkg.com/lucide@0.263.1/dist/umd/lucide.min.js" defer></script>
+  <script src="https://unpkg.com/lucide@0.263.1/dist/umd/lucide.min.js" defer onload="lucide.createIcons()"></script>
   <style>
     /* Research cards ”” full featured */
     .research-full-grid {
@@ -429,7 +429,9 @@
       <div class="blog-grid stagger-children">
         <div class="glass-card blog-card">
           <div class="blog-image">
-            <div class="blog-hero-img" style="background:var(--bg-secondary);display:flex;align-items:center;justify-content:center;"><i data-lucide="hammer" style="width:3.5rem;height:3.5rem;color:var(--accent-blue);"></i></div>
+            <div class="blog-hero-img" style="overflow:hidden;padding:0;">
+              <img src="assets/images/blog-systems-thinking.png" alt="Why Systems Thinking Must Replace Syllabus Thinking" loading="lazy" style="width:100%;height:180px;object-fit:cover;display:block;border-radius:var(--radius-sm) var(--radius-sm) 0 0;">
+            </div>
             <span class="blog-category">Engineering</span>
           </div>
           <div class="blog-content">
@@ -442,7 +444,9 @@
 
         <div class="glass-card blog-card">
           <div class="blog-image">
-            <div class="blog-hero-img" style="background:var(--bg-secondary);display:flex;align-items:center;justify-content:center;"><i data-lucide="flask-conical" style="width:3.5rem;height:3.5rem;color:var(--accent-blue);"></i></div>
+            <div class="blog-hero-img" style="overflow:hidden;padding:0;">
+              <img src="assets/images/blog-research-culture.png" alt="Building a Research Culture in Tier-2 Colleges" loading="lazy" style="width:100%;height:180px;object-fit:cover;display:block;border-radius:var(--radius-sm) var(--radius-sm) 0 0;">
+            </div>
             <span class="blog-category">Research</span>
           </div>
           <div class="blog-content">
@@ -455,7 +459,9 @@
 
         <div class="glass-card blog-card">
           <div class="blog-image">
-            <div class="blog-hero-img" style="background:var(--bg-secondary);display:flex;align-items:center;justify-content:center;"><i data-lucide="globe" style="width:3.5rem;height:3.5rem;color:var(--accent-blue);"></i></div>
+            <div class="blog-hero-img" style="overflow:hidden;padding:0;">
+              <img src="assets/images/blog-india-tech-hubs.png" alt="The Rise of India's Tier-2 Tech Hubs" loading="lazy" style="width:100%;height:180px;object-fit:cover;display:block;border-radius:var(--radius-sm) var(--radius-sm) 0 0;">
+            </div>
             <span class="blog-category">India Tech</span>
           </div>
           <div class="blog-content">
@@ -468,7 +474,9 @@
 
         <div class="glass-card blog-card">
           <div class="blog-image">
-            <div class="blog-hero-img" style="background:var(--bg-secondary);display:flex;align-items:center;justify-content:center;"><i data-lucide="lightbulb" style="width:3.5rem;height:3.5rem;color:var(--accent-blue);"></i></div>
+            <div class="blog-hero-img" style="overflow:hidden;padding:0;">
+              <img src="assets/images/blog-hackathon-product.png" alt="From Hackathon to Product" loading="lazy" style="width:100%;height:180px;object-fit:cover;display:block;border-radius:var(--radius-sm) var(--radius-sm) 0 0;">
+            </div>
             <span class="blog-category">Innovation</span>
           </div>
           <div class="blog-content">
@@ -481,7 +489,9 @@
 
         <div class="glass-card blog-card">
           <div class="blog-image">
-            <div class="blog-hero-img" style="background:var(--bg-secondary);display:flex;align-items:center;justify-content:center;"><i data-lucide="landmark" style="width:3.5rem;height:3.5rem;color:var(--accent-blue);"></i></div>
+            <div class="blog-hero-img" style="overflow:hidden;padding:0;">
+              <img src="assets/images/blog-mou-partnership.png" alt="MoU-Based Partnerships for College Engineering Ecosystems" loading="lazy" style="width:100%;height:180px;object-fit:cover;display:block;border-radius:var(--radius-sm) var(--radius-sm) 0 0;">
+            </div>
             <span class="blog-category">Institutions</span>
           </div>
           <div class="blog-content">
@@ -494,7 +504,9 @@
 
         <div class="glass-card blog-card">
           <div class="blog-image">
-            <div class="blog-hero-img" style="background:var(--bg-secondary);display:flex;align-items:center;justify-content:center;"><i data-lucide="zap" style="width:3.5rem;height:3.5rem;color:var(--accent-blue);"></i></div>
+            <div class="blog-hero-img" style="overflow:hidden;padding:0;">
+              <img src="assets/images/blog-student-lab.png" alt="Setting Up a Student Engineering Lab From Scratch" loading="lazy" style="width:100%;height:180px;object-fit:cover;display:block;border-radius:var(--radius-sm) var(--radius-sm) 0 0;">
+            </div>
             <span class="blog-category">Engineering</span>
           </div>
           <div class="blog-content">
@@ -588,11 +600,7 @@
   <script src="js/circuit-bg.js"></script>
   <script src="js/main.js"></script>
   <script>
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function() { lucide.createIcons(); });
-    } else {
-      lucide.createIcons();
-    }
+    if (typeof lucide !== 'undefined') { lucide.createIcons(); }
   </script>
 </body>
 </html>

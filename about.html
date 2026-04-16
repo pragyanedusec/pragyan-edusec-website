@@ -49,7 +49,7 @@
   <link rel="stylesheet" href="css/home.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>âˆž</text></svg>">
   <!-- Lucide deferred for performance -->
-  <script src="https://unpkg.com/lucide@0.263.1/dist/umd/lucide.min.js" defer></script>
+  <script src="https://unpkg.com/lucide@0.263.1/dist/umd/lucide.min.js" defer onload="lucide.createIcons()"></script>
   <style>
     /* About-specific styles */
     .philosophy-grid {
@@ -779,11 +779,7 @@
   <script src="js/circuit-bg.js"></script>
   <script src="js/main.js"></script>
   <script>
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function() { lucide.createIcons(); });
-    } else {
-      lucide.createIcons();
-    }
+    if (typeof lucide !== 'undefined') { lucide.createIcons(); }
   </script>
 </body>
 </html>
