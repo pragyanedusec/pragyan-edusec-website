@@ -3,8 +3,8 @@
    Modern Sans-Serif + Glassmorphism
    ============================ */
 
-/* Google Fonts — Inter (full weight range) + Outfit (brand) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap');
+/* Google Fonts — loaded non-blocking via <link> in HTML head */
+/* @import removed — now loaded via preconnect + link tags for performance */
 
 /* ============================
    CSS Variables (Design Tokens)
