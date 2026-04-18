@@ -291,6 +291,12 @@
   color: white;
 }
 
+/* White-filter icon for gradient (Impact) node */
+.flow-icon-img--light {
+  filter: brightness(0) invert(1);
+  opacity: 0.92;
+}
+
 .eco-connector {
   display: flex;
   flex-direction: column;
@@ -396,6 +402,14 @@
   align-items: center;
   justify-content: center;
   transition: var(--transition-base);
+  overflow: hidden;
+}
+
+.program-icon-img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  display: block;
 }
 
 .program-card:hover .program-icon {

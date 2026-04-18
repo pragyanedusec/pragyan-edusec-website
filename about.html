@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,20 +10,20 @@
   <meta name="geo.placename" content="Hubballi, Karnataka, India">
   <meta name="geo.position" content="15.3647;75.1240">
   <meta name="ICBM" content="15.3647, 75.1240">
-  <title>About Us — Pragyan EduSec | MSME & DPIIT Recognized Technology Ecosystem</title>
-  <meta name="description" content="Learn about Pragyan EduSec — a MSME & DPIIT Startup India recognized Technology & Innovation Ecosystem founded in 2024 in Hubballi, Karnataka. Meet the founding team and our mission to build India's next generation of engineers.">
+  <title>About Us &mdash; Pragyan EduSec | MSME & DPIIT Recognized Technology Ecosystem</title>
+  <meta name="description" content="Learn about Pragyan EduSec &mdash; a MSME & DPIIT Startup India recognized Technology & Innovation Ecosystem founded in 2024 in Hubballi, Karnataka. Meet the founding team and our mission to build India's next generation of engineers.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Pragyan EduSec">
   <link rel="canonical" href="https://www.pragyanedusec.in/about.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.pragyanedusec.in/about.html">
   <meta property="og:site_name" content="Pragyan EduSec">
-  <meta property="og:title" content="About Pragyan EduSec — Technology & Innovation Ecosystem">
+  <meta property="og:title" content="About Pragyan EduSec &mdash; Technology & Innovation Ecosystem">
   <meta property="og:description" content="MSME & DPIIT Startup India recognized. Founded 2024 in Hubballi, Karnataka. We build engineering programs, research initiatives, and innovation labs for India.">
   <meta property="og:image" content="https://www.pragyanedusec.in/assets/images/logo.webp">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="About Pragyan EduSec">
-  <meta name="twitter:description" content="Government-recognized Technology & Innovation Ecosystem — building India's next generation of engineers from Hubballi, Karnataka.">
+  <meta name="twitter:description" content="Government-recognized Technology & Innovation Ecosystem &mdash; building India's next generation of engineers from Hubballi, Karnataka.">
   <meta name="twitter:image" content="https://www.pragyanedusec.in/assets/images/logo.webp">
   <!-- ===== BREADCRUMB SCHEMA ===== -->
   <script type="application/ld+json">
@@ -49,7 +49,7 @@
   <link rel="stylesheet" href="css/home.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>∞</text></svg>">
   <!-- Lucide deferred for performance -->
-  <script src="https://unpkg.com/lucide@0.263.1/dist/umd/lucide.min.js" defer onload="lucide.createIcons()"></script>
+  
   <style>
     /* About-specific styles */
     .philosophy-grid {
@@ -67,6 +67,7 @@
       overflow: hidden;
       backdrop-filter: blur(10px);
       transition: var(--transition-base);
+      box-shadow: 0 4px 24px rgba(37,99,235,0.04);
     }
     .philosophy-card::before {
       content: '';
@@ -77,9 +78,10 @@
     }
     .philosophy-card:hover {
       border-color: var(--border-accent);
-      transform: translateY(-6px);
-      box-shadow: 0 20px 48px rgba(37, 99, 235, 0.1);
+      transform: translateY(-8px);
+      box-shadow: 0 32px 64px rgba(37, 99, 235, 0.12);
     }
+    .philosophy-card:hover .icon-3d { animation-play-state: paused; transform: translateY(-4px) scale(1.08); filter: drop-shadow(0 16px 32px rgba(37,99,235,0.28)); }
     .philo-num {
       font-family: var(--font-heading);
       font-size: 4rem;
@@ -88,7 +90,36 @@
       line-height: 1;
       margin-bottom: -12px;
     }
-    .philo-icon { font-size: 2rem; margin-bottom: 16px; display: block; }
+    .philo-icon { margin-bottom: 20px; display: block; }
+    .icon-3d {
+      width: 72px; height: 72px;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 24px rgba(37,99,235,0.18));
+      animation: float3d 4s ease-in-out infinite;
+      display: block;
+    }
+    .icon-3d-sm {
+      width: 40px; height: 40px;
+      object-fit: contain;
+      filter: drop-shadow(0 6px 12px rgba(37,99,235,0.15));
+      display: block;
+    }
+    .icon-3d-lg {
+      width: 64px; height: 64px;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 20px rgba(37,99,235,0.20));
+      animation: float3d 5s ease-in-out infinite;
+      display: block;
+    }
+    .icon-3d-tl {
+      width: 22px; height: 22px;
+      object-fit: contain;
+      display: block;
+    }
+    @keyframes float3d {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
     .philosophy-card h3 {
       font-family: var(--font-brand);
       font-size: 1.15rem;
@@ -131,7 +162,7 @@
     }
     .value-item p { font-size: 0.82rem; color: #64748b; line-height: 1.6; }
 
-    /* Team grid — clean 2-card layout */
+    /* Team grid &mdash; clean 2-card layout */
     .team-grid-v2 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -169,7 +200,7 @@
     }
     .team-card-v2:hover::before { transform: scaleX(1); }
 
-    /* CEO card — subtle highlight, same size */
+    /* CEO card &mdash; subtle highlight, same size */
     .team-card-v2.ceo-card {
       border: 1.5px solid rgba(37,99,235,0.18);
       background: linear-gradient(160deg, rgba(37,99,235,0.02) 0%, rgba(6,182,212,0.02) 100%);
@@ -182,7 +213,7 @@
       box-shadow: 0 28px 56px rgba(37,99,235,0.14);
     }
 
-    /* Avatar — uniform rectangle */
+    /* Avatar &mdash; uniform rectangle */
     .team-avatar-v2 {
       width: 160px;
       height: 200px;
@@ -239,7 +270,7 @@
       margin: 0;
     }
 
-    /* Timeline — left-anchored single column */
+    /* Timeline &mdash; left-anchored single column */
     .timeline-v2 { position: relative; max-width: 680px; margin: 0 auto; }
     .timeline-v2::before {
       content: ''; position: absolute; left: 20px; top: 8px; bottom: 8px;
@@ -321,7 +352,7 @@
       .philosophy-quote::before { font-size: 8rem; }
     }
 
-    /* Recognition Strip — Premium Glass Pill */
+    /* Recognition Strip &mdash; Premium Glass Pill */
     .recognition-strip-wrap {
       display: flex;
       justify-content: center;
@@ -378,6 +409,28 @@
         height: 1px;
       }
     }
+    /* Override card-icon for 3D assets — remove gradient box */
+    .vision-mission-grid .card-icon,
+    .vision-mission-grid .card-icon.purple {
+      background: none;
+      box-shadow: none;
+      border-radius: 0;
+      width: auto;
+      height: auto;
+      margin-bottom: 0;
+      padding: 0;
+    }
+    /* Premium glass-card upgrade */
+    .vision-mission-grid .glass-card {
+      box-shadow: 0 8px 40px rgba(37,99,235,0.08), 0 1px 3px rgba(0,0,0,0.04);
+      transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s cubic-bezier(0.4,0,0.2,1);
+    }
+    .vision-mission-grid .glass-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(37,99,235,0.14), 0 4px 12px rgba(0,0,0,0.06);
+    }
+    /* Value icon wrapper — clear background for 3D icons */
+    .value-icon img { display: block; margin: 0 auto; }
   </style>
 </head>
 <body>
@@ -387,14 +440,14 @@
   <nav class="navbar" id="navbar">
     <div class="container">
       <a href="index.html" class="nav-brand">
-        <img src="assets/images/logo.webp" alt="Pragyan EduSec — Technology and Innovation Ecosystem" class="brand-logo" width="120" height="40" loading="eager">
+        <img src="assets/images/logo.webp" alt="Pragyan EduSec &mdash; Technology and Innovation Ecosystem" class="brand-logo" width="120" height="40" loading="eager">
         <div class="brand-text">PRAGYAN <span>EDUSEC</span></div>
       </a>
       <div class="nav-links" id="nav-links">
         <!-- Mobile menu header: white logo + close button -->
         <div class="mobile-menu-header">
           <img src="assets/images/logo.webp" alt="Pragyan EduSec Logo" class="mobile-menu-logo">
-          <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">✕</button>
+          <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">&#10005;</button>
         </div>
         <!-- Nav links wrapper -->
         <div class="mobile-nav-links-wrapper">
@@ -431,7 +484,7 @@
           "We are not building an education company.<br>
           We are building a <span class="gradient-text">technology ecosystem</span>."
         </blockquote>
-        <cite>— Pragyan EduSec, Founded 2024, Hubballi, Karnataka</cite>
+        <cite>&mdash; Pragyan EduSec, Founded 2024, Hubballi, Karnataka</cite>
       </div>
     </div>
   </section>
@@ -443,27 +496,27 @@
         <div class="section-label">Our Story</div>
         <h2>A <span class="gradient-text">Technology Ecosystem</span><br>Built for Builders</h2>
         <p>We realized that while students were studying engineering, they weren't building systems. Most educational frameworks focused on certificates and placements rather than hands-on problem solving.</p>
-        <p style="margin-top: 1rem;">Pragyan EduSec was founded to bridge this gap. We don't run coaching classes. We build comprehensive ecosystems — engineering programs, research environments, and innovation labs — that transform how students engage with technology across Indian institutions.</p>
+        <p style="margin-top: 1rem;">Pragyan EduSec was founded to bridge this gap. We don't run coaching classes. We build comprehensive ecosystems &mdash; engineering programs, research environments, and innovation labs &mdash; that transform how students engage with technology across Indian institutions.</p>
       </div>
 
       <div class="philosophy-grid stagger-children">
         <div class="philosophy-card">
           <div class="philo-num">01</div>
-          <span class="philo-icon"><i data-lucide="settings" style="width:2rem;height:2rem;"></i></span>
+          <span class="philo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-3d"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></span>
           <h3>We Engineer Systems</h3>
-          <p>Every program we build is a system — designed with intent, structured for scale, and built to produce real outcomes. We think like engineers, not educators.</p>
+          <p>Every program we build is a system &mdash; designed with intent, structured for scale, and built to produce real outcomes. We think like engineers, not educators.</p>
         </div>
         <div class="philosophy-card">
           <div class="philo-num">02</div>
-          <span class="philo-icon"><i data-lucide="flask-conical" style="width:2rem;height:2rem;"></i></span>
+          <span class="philo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-3d" style="animation-delay:1.5s"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a2.533 2.533 0 0 0 2.28 3.45h10a2.533 2.533 0 0 0 2.28-3.45l-5.068-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M10 16h4"/></svg></span>
           <h3>We Drive Research</h3>
           <p>Knowledge without inquiry goes stale. We create environments where students, faculty, and institutions actively research, publish, and push the boundaries of what's possible.</p>
         </div>
         <div class="philosophy-card">
           <div class="philo-num">03</div>
-          <span class="philo-icon"><i data-lucide="lightbulb" style="width:2rem;height:2rem;"></i></span>
+          <span class="philo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-3d" style="animation-delay:3s"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></span>
           <h3>We Foster Innovation</h3>
-          <p>From prototype to product — we support ideas at every stage. Our ecosystem gives builders the space, tools, and community to turn raw innovation into real-world impact.</p>
+          <p>From prototype to product &mdash; we support ideas at every stage. Our ecosystem gives builders the space, tools, and community to turn raw innovation into real-world impact.</p>
         </div>
       </div>
     </div>
@@ -479,24 +532,24 @@
       </div>
       <div class="values-strip reveal">
         <div class="value-item">
-          <span class="value-icon"><i data-lucide="hammer" style="width:1.4rem;height:1.4rem;"></i></span>
+          <span class="value-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-8.373 8.373a1 1 0 1 1-1.414-1.414L13.586 10.586"/><path d="m18 15 4-4-5-5-4 4"/></svg></span>
           <h4>Build, Don't Just Learn</h4>
           <p>We measure success by what students create, not just what they know.</p>
         </div>
         <div class="value-item">
-          <span class="value-icon"><i data-lucide="globe" style="width:1.4rem;height:1.4rem;"></i></span>
+          <span class="value-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
           <h4>India-Rooted, Globally Relevant</h4>
           <p>Built from Hubballi, designed for the world.</p>
         </div>
         <div class="value-item">
-          <span class="value-icon"><i data-lucide="handshake" style="width:1.4rem;height:1.4rem;"></i></span>
+          <span class="value-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3-6 6"/><path d="m15 15 2 2"/><path d="m15 11 2 2"/><path d="m11 10 2 2"/><path d="m8 15 2 2"/><path d="m3 21 6-6"/></svg></span>
           <h4>Institutional Collaboration</h4>
           <p>We grow only as fast as the institutions we partner with.</p>
         </div>
         <div class="value-item">
-          <span class="value-icon"><i data-lucide="rocket" style="width:1.4rem;height:1.4rem;"></i></span>
+          <span class="value-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 3.82-13.3c.09-.12.26-.14.38-.05L16.2 1.6a.4.4 0 0 1 .1.46C15 4.3 15 7 15 7s2.7 0 4.96-1.31a.4.4 0 0 1 .46.1l2.95 2.94c.09.12.07.29-.05.38A22 22 0 0 1 15 12a10 10 0 0 1-3 3z"/><path d="M12 15s.8 2.5 2.8 4M9 12s-2.5-.8-4-2.8"/></svg></span>
           <h4>Long-Term Thinking</h4>
-          <p>We are early builders of a 2028 ecosystem. Not a sprint — a marathon.</p>
+          <p>We are early builders of a 2028 ecosystem. Not a sprint &mdash; a marathon.</p>
         </div>
       </div>
     </div>
@@ -511,37 +564,37 @@
       </div>
       <div class="vision-mission-grid stagger-children">
         <div class="glass-card">
-          <div class="card-icon"><i data-lucide="telescope" style="width:2rem;height:2rem;"></i></div>
+          <div class="card-icon"><img src="assets/images/icon-vision-3d.png" alt="Vision" class="icon-3d-lg"></div>
           <h3>Our Vision</h3>
           <div style="margin-top:20px; display:flex; flex-direction:column; gap:16px;">
             <div style="display:flex;gap:12px;align-items:flex-start;">
-              <span style="color:var(--accent-blue);font-size:1.1rem;line-height:1.8;flex-shrink:0;">▸</span>
-              <p>To build India's most impactful technology ecosystem — where thousands of engineers, researchers, and innovators collaborate to create systems that matter.</p>
+              <span style="color:var(--accent-blue);font-size:1.1rem;line-height:1.8;flex-shrink:0;">&#10022;</span>
+              <p>To build India's most impactful technology ecosystem &mdash; where thousands of engineers, researchers, and innovators collaborate to create systems that matter.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
-              <span style="color:var(--accent-blue);font-size:1.1rem;line-height:1.8;flex-shrink:0;">▸</span>
+              <span style="color:var(--accent-blue);font-size:1.1rem;line-height:1.8;flex-shrink:0;">&#10022;</span>
               <p>To make Pragyan EduSec the backbone of engineering and research culture across India's Tier-2 and Tier-3 institutions by 2028.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
-              <span style="color:var(--accent-blue);font-size:1.1rem;line-height:1.8;flex-shrink:0;">▸</span>
-              <p>To be recognized as the organization that transformed how India builds technology — from classroom consumers to ecosystem builders.</p>
+              <span style="color:var(--accent-blue);font-size:1.1rem;line-height:1.8;flex-shrink:0;">&#10022;</span>
+              <p>To be recognized as the organization that transformed how India builds technology &mdash; from classroom consumers to ecosystem builders.</p>
             </div>
           </div>
         </div>
         <div class="glass-card">
-          <div class="card-icon purple"><i data-lucide="rocket" style="width:2rem;height:2rem;"></i></div>
+          <div class="card-icon purple"><img src="assets/images/icon-mission-3d.png" alt="Mission" class="icon-3d-lg" style="animation-delay:2.5s"></div>
           <h3>Our Mission</h3>
           <div style="margin-top:20px; display:flex; flex-direction:column; gap:16px;">
             <div style="display:flex;gap:12px;align-items:flex-start;">
-              <span style="color:var(--accent-blue);font-size:1.1rem;line-height:1.8;flex-shrink:0;">▸</span>
+              <span style="color:var(--accent-blue);font-size:1.1rem;line-height:1.8;flex-shrink:0;">&#10022;</span>
               <p>To run engineering programs, research initiatives, and innovation labs that turn students into builders and institutions into ecosystems of excellence.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
-              <span style="color:var(--accent-blue);font-size:1.1rem;line-height:1.8;flex-shrink:0;">▸</span>
-              <p>To partner with colleges, universities, and academic institutions to design and deploy programs that emphasize engineering, research, and innovation — not certification.</p>
+              <span style="color:var(--accent-blue);font-size:1.1rem;line-height:1.8;flex-shrink:0;">&#10022;</span>
+              <p>To partner with colleges, universities, and academic institutions to design and deploy programs that emphasize engineering, research, and innovation &mdash; not certification.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
-              <span style="color:var(--accent-blue);font-size:1.1rem;line-height:1.8;flex-shrink:0;">▸</span>
+              <span style="color:var(--accent-blue);font-size:1.1rem;line-height:1.8;flex-shrink:0;">&#10022;</span>
               <p>Our ecosystem is supported by an internal technology infrastructure designed to enable research collaboration, project development, and innovation tracking.</p>
             </div>
           </div>
@@ -565,27 +618,27 @@
         <!-- Amaan Muchale -->
         <div class="team-card-v2">
           <div class="team-avatar-v2">
-            <img src="assets/images/team-amaan.jpg" alt="Amaan Muchale — Co-Founder & COO" loading="lazy">
+            <img src="assets/images/team-amaan.jpg" alt="Amaan Muchale &mdash; Co-Founder & COO" loading="lazy">
           </div>
           <span class="team-role-v2">Co-Founder &amp; COO</span>
           <h3>Amaan Muchale</h3>
           <p>I believe in transforming visionary ideas into operational excellence. My passion lies in building the frameworks and fostering the collaboration that turns bold dreams into scalable realities.</p>
         </div>
 
-        <!-- Anantnag B Kavadikeri — CEO -->
+        <!-- Anantnag B Kavadikeri &mdash; CEO -->
         <div class="team-card-v2 ceo-card">
           <div class="team-avatar-v2">
-            <img src="assets/images/Anantnag.JPG.jpg" alt="Anantnag B Kavadikeri — Founder & CEO" loading="lazy" width="300" height="400">
+            <img src="assets/images/Anantnag.JPG.jpg" alt="Anantnag B Kavadikeri &mdash; Founder & CEO" loading="lazy" width="300" height="400">
           </div>
           <span class="team-role-v2">&#9733; Founder &amp; CEO</span>
           <h3>Anantnag B Kavadikeri</h3>
-          <p>I believe great ideas don't need fancy zip codes — they need heart, hustle, and a touch of rebellion. Pragyan EduSec is my playground for impact where emerging tech hubs meet bold dreams and scalable solutions.</p>
+          <p>I believe great ideas don't need fancy zip codes &mdash; they need heart, hustle, and a touch of rebellion. Pragyan EduSec is my playground for impact where emerging tech hubs meet bold dreams and scalable solutions.</p>
         </div>
 
         <!-- Rohini Devan -->
         <div class="team-card-v2">
           <div class="team-avatar-v2">
-            <img src="assets/images/team-rohini.webp" alt="Rohini Devan — Co-Founder & CTO" loading="lazy">
+            <img src="assets/images/team-rohini.webp" alt="Rohini Devan &mdash; Co-Founder & CTO" loading="lazy">
           </div>
           <span class="team-role-v2">Co-Founder &amp; CTO</span>
           <h3>Rohini Devan</h3>
@@ -602,43 +655,43 @@
       <div class="section-header reveal">
         <div class="section-label">Our Journey</div>
         <h2>The Pragyan <span class="gradient-text">Story</span></h2>
-        <p>Early builders of a technology ecosystem — from a single idea in Hubballi to institutions across India.</p>
+        <p>Early builders of a technology ecosystem &mdash; from a single idea in Hubballi to institutions across India.</p>
       </div>
 
       <div class="timeline-v2 stagger-children">
         <div class="tl-item">
-          <div class="tl-dot"><i data-lucide="sprout" style="width:1rem;height:1rem;"></i></div>
+          <div class="tl-dot"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-3d-tl"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
           <div class="tl-content">
-            <div class="tl-year">2024 — The Spark</div>
+            <div class="tl-year">2024 &mdash; The Spark</div>
             <h4>The Ecosystem Idea Was Born</h4>
-            <p>A founding team from Hubballi saw that Indian institutions were producing graduates who could study technology — but not build it. Pragyan EduSec was incorporated to change that.</p>
+            <p>A founding team from Hubballi saw that Indian institutions were producing graduates who could study technology &mdash; but not build it. Pragyan EduSec was incorporated to change that.</p>
           </div>
         </div>
 
         <div class="tl-item">
-          <div class="tl-dot"><i data-lucide="hammer" style="width:1rem;height:1rem;"></i></div>
+          <div class="tl-dot"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-3d-tl"><path d="m15 12-8.373 8.373a1 1 0 1 1-1.414-1.414L13.586 10.586"/><path d="m18 15 4-4-5-5-4 4"/></svg></div>
           <div class="tl-content">
-            <div class="tl-year">2025 — Building the Foundation</div>
+            <div class="tl-year">2025 &mdash; Building the Foundation</div>
             <h4>First Programs &amp; Institutional Partnerships</h4>
             <p>Launched pilot Faculty Development Programs (FDPs), Student Development Programs (SDPs), and signed the first MOU-based partnerships with colleges across Karnataka.</p>
           </div>
         </div>
 
         <div class="tl-item">
-          <div class="tl-dot"><i data-lucide="rocket" style="width:1rem;height:1rem;"></i></div>
+          <div class="tl-dot"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-3d-tl"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 3.82-13.3c.09-.12.26-.14.38-.05L16.2 1.6a.4.4 0 0 1 .1.46C15 4.3 15 7 15 7s2.7 0 4.96-1.31a.4.4 0 0 1 .46.1l2.95 2.94c.09.12.07.29-.05.38A22 22 0 0 1 15 12a10 10 0 0 1-3 3z"/><path d="M12 15s.8 2.5 2.8 4M9 12s-2.5-.8-4-2.8"/></svg></div>
           <div class="tl-content">
-            <div class="tl-year">2026 — Scaling Activity</div>
+            <div class="tl-year">2026 &mdash; Scaling Activity</div>
             <h4>15+ Institutions. 500+ Engineers Trained.</h4>
-            <p>Expanded programs to 15+ institutions, conducted hackathons, research presentations, and innovation workshops — all while developing our internal technology infrastructure.</p>
+            <p>Expanded programs to 15+ institutions, conducted hackathons, research presentations, and innovation workshops &mdash; all while developing our internal technology infrastructure.</p>
           </div>
         </div>
 
         <div class="tl-item">
-          <div class="tl-dot"><i data-lucide="globe" style="width:1rem;height:1rem;"></i></div>
+          <div class="tl-dot"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-3d-tl"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
           <div class="tl-content">
-            <div class="tl-year">2028 — The Full Ecosystem</div>
+            <div class="tl-year">2028 &mdash; The Full Ecosystem</div>
             <h4>India's Technology Ecosystem, Complete</h4>
-            <p>Our target: a thriving, interconnected ecosystem of students, researchers, labs, products, and institutions — all contributing to India-first technology innovation at scale.</p>
+            <p>Our target: a thriving, interconnected ecosystem of students, researchers, labs, products, and institutions &mdash; all contributing to India-first technology innovation at scale.</p>
           </div>
         </div>
       </div>
@@ -665,15 +718,15 @@
           <p style="margin-bottom:24px;">Pragyan EduSec is a registered Micro, Small & Medium Enterprise under the Ministry of Micro, Small and Medium Enterprises, Government of India. This recognition reinforces our role as a growing innovation-driven enterprise contributing to India's technological and economic development.</p>
           <div style="display:flex;flex-direction:column;gap:14px;">
             <div style="display:flex;gap:10px;align-items:flex-start;">
-              <span style="color:var(--accent-blue);font-size:0.85rem;line-height:1.7;flex-shrink:0;">✦</span>
+              <span style="color:var(--accent-blue);font-size:0.85rem;line-height:1.7;flex-shrink:0;">&#10022;</span>
               <p style="margin:0;font-size:0.9rem;">Validates our operational credibility and compliance</p>
             </div>
             <div style="display:flex;gap:10px;align-items:flex-start;">
-              <span style="color:var(--accent-blue);font-size:0.85rem;line-height:1.7;flex-shrink:0;">✦</span>
+              <span style="color:var(--accent-blue);font-size:0.85rem;line-height:1.7;flex-shrink:0;">&#10022;</span>
               <p style="margin:0;font-size:0.9rem;">Enables us to collaborate with institutions at a national scale</p>
             </div>
             <div style="display:flex;gap:10px;align-items:flex-start;">
-              <span style="color:var(--accent-blue);font-size:0.85rem;line-height:1.7;flex-shrink:0;">✦</span>
+              <span style="color:var(--accent-blue);font-size:0.85rem;line-height:1.7;flex-shrink:0;">&#10022;</span>
               <p style="margin:0;font-size:0.9rem;">Supports our long-term vision of building sustainable tech infrastructure</p>
             </div>
           </div>
@@ -682,22 +735,22 @@
         <!-- Startup India Card -->
         <div class="philosophy-card" style="padding: 44px 36px;">
           <div style="margin-bottom:24px;">
-            <img src="assets/images/DPIIT-LOGO.png" alt="Startup India — DPIIT Logo" style="height:120px;width:auto;object-fit:contain;display:block;margin-bottom:16px;">
+            <img src="assets/images/DPIIT-LOGO.png" alt="Startup India &mdash; DPIIT Logo" style="height:120px;width:auto;object-fit:contain;display:block;margin-bottom:16px;">
             <h3 style="margin-bottom:2px;">Startup India Certification</h3>
             <span style="font-size:0.75rem;font-weight:600;color:var(--accent-blue);text-transform:uppercase;letter-spacing:1px;">DPIIT, Govt. of India</span>
           </div>
           <p style="margin-bottom:24px;">We are officially recognized under the Startup India initiative by the Department for Promotion of Industry and Internal Trade. This certification positions Pragyan EduSec as a government-recognized startup focused on innovation, scalability, and impact.</p>
           <div style="display:flex;flex-direction:column;gap:14px;">
             <div style="display:flex;gap:10px;align-items:flex-start;">
-              <span style="color:var(--accent-blue);font-size:0.85rem;line-height:1.7;flex-shrink:0;">✦</span>
+              <span style="color:var(--accent-blue);font-size:0.85rem;line-height:1.7;flex-shrink:0;">&#10022;</span>
               <p style="margin:0;font-size:0.9rem;">Recognized for innovation-led ecosystem building</p>
             </div>
             <div style="display:flex;gap:10px;align-items:flex-start;">
-              <span style="color:var(--accent-blue);font-size:0.85rem;line-height:1.7;flex-shrink:0;">✦</span>
+              <span style="color:var(--accent-blue);font-size:0.85rem;line-height:1.7;flex-shrink:0;">&#10022;</span>
               <p style="margin:0;font-size:0.9rem;">Eligible for national startup benefits and support programs</p>
             </div>
             <div style="display:flex;gap:10px;align-items:flex-start;">
-              <span style="color:var(--accent-blue);font-size:0.85rem;line-height:1.7;flex-shrink:0;">✦</span>
+              <span style="color:var(--accent-blue);font-size:0.85rem;line-height:1.7;flex-shrink:0;">&#10022;</span>
               <p style="margin:0;font-size:0.9rem;">Aligned with India's vision of fostering entrepreneurship and technology</p>
             </div>
           </div>
@@ -718,9 +771,9 @@
     <div class="container">
       <div class="cta-banner reveal">
         <h2>Join the <span class="gradient-text">Ecosystem</span></h2>
-        <p>Whether you're a student who builds, a researcher who explores, or an institution that wants to transform — there's a place for you here.</p>
+        <p>Whether you're a student who builds, a researcher who explores, or an institution that wants to transform &mdash; there's a place for you here.</p>
         <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-          <a href="ecosystem.html" class="btn btn-primary">Explore Ecosystem →</a>
+          <a href="ecosystem.html" class="btn btn-primary">Explore Ecosystem &rarr;</a>
           <a href="contact.html" class="btn btn-secondary">Partner With Us</a>
         </div>
       </div>
@@ -736,7 +789,7 @@
             <img src="assets/images/logo.webp" alt="Pragyan EduSec Logo" class="brand-logo">
             <div class="brand-text">PRAGYAN <span>EDUSEC</span></div>
           </a>
-          <p>Building India's Technology &amp; Innovation Ecosystem — one institution at a time.</p>
+          <p>Building India's Technology &amp; Innovation Ecosystem &mdash; one institution at a time.</p>
         </div>
         <div>
           <h4>Quick Links</h4>
@@ -767,7 +820,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>Â© 2026 Pragyan EduSec. Building the Next Generation Technology Ecosystem.</p>
+        <p>&copy; 2026 Pragyan EduSec. Building the Next Generation Technology Ecosystem.</p>
         <div class="footer-social">
           <a href="https://www.linkedin.com/company/pragyan-edusec/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="Follow us on LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://www.instagram.com/pragyanedusec?igsh=MTRwOG9zZ2Njb3JsaQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Follow us on Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
@@ -778,11 +831,13 @@
 
   <script src="js/circuit-bg.js"></script>
   <script src="js/main.js"></script>
-  <script>
-    if (typeof lucide !== 'undefined') { lucide.createIcons(); }
-  </script>
+  <!-- Lucide: load after full DOM so all data-lucide elements exist -->
+  <script src="https://unpkg.com/lucide@0.263.1/dist/umd/lucide.min.js"></script>
+  <script>if (typeof lucide !== 'undefined') { lucide.createIcons(); }</script>
+  
 </body>
 </html>
+
 
 
 

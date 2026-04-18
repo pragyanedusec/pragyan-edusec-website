@@ -1743,3 +1743,216 @@ section {
   to { transform: rotate(360deg); }
 }
 
+
+/* ============================
+   Scroll Reveal Animations
+   ============================ */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+.reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+.stagger-children > * { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.stagger-children.visible > * { opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(1) { transition-delay: 0.1s; }
+.stagger-children.visible > *:nth-child(2) { transition-delay: 0.2s; }
+.stagger-children.visible > *:nth-child(3) { transition-delay: 0.3s; }
+.stagger-children.visible > *:nth-child(4) { transition-delay: 0.4s; }
+.stagger-children.visible > *:nth-child(5) { transition-delay: 0.5s; }
+.stagger-children.visible > *:nth-child(6) { transition-delay: 0.6s; }
+
+/* ============================
+   Flow Icon Images — Ecosystem Flow
+   ============================ */
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes iconGlow {
+  0%, 100% { filter: drop-shadow(0 4px 8px rgba(37,99,235,0.2)); }
+  50% { filter: drop-shadow(0 6px 16px rgba(37,99,235,0.45)); }
+}
+
+/* Index.html ecosystem flow node images */
+.flow-icon-img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  animation: iconFloat 3.5s ease-in-out infinite, iconGlow 3.5s ease-in-out infinite;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), filter 0.4s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+.eco-node:hover .flow-icon-img {
+  transform: scale(1.18) translateY(-4px);
+  filter: drop-shadow(0 8px 20px rgba(37,99,235,0.5));
+  animation-play-state: paused;
+}
+
+/* Stagger float delays for each eco node */
+#eco-collaboration .flow-icon-img  { animation-delay: 0s, 0s; }
+#eco-students    .flow-icon-img    { animation-delay: 0.4s, 0.4s; }
+#eco-compete     .flow-icon-img    { animation-delay: 0.8s, 0.8s; }
+#eco-research    .flow-icon-img    { animation-delay: 1.2s, 1.2s; }
+#eco-impact      .flow-icon-img    { animation-delay: 1.6s, 1.6s; }
+
+/* Impact node: invert image for dark bg */
+#eco-impact .flow-icon-img {
+  filter: brightness(0) invert(1) drop-shadow(0 4px 8px rgba(255,255,255,0.2));
+}
+#eco-impact:hover .flow-icon-img {
+  filter: brightness(0) invert(1) drop-shadow(0 8px 20px rgba(255,255,255,0.5));
+}
+
+/* Ecosystem.html efd-dot circle images */
+.efd-img-icon {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  animation: iconFloat 3.5s ease-in-out infinite;
+  transition: transform 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+.efd-node:hover .efd-img-icon {
+  transform: scale(1.15);
+  animation-play-state: paused;
+}
+
+/* prog-visual-icon image sizing */
+.prog-visual-icon img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: contain;
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+/* ============================
+   Ecosystem Flow — Mobile Responsive
+   ============================ */
+@media (max-width: 768px) {
+  .ecosystem-flow {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .eco-node {
+    max-width: 100%;
+    width: 100%;
+    min-width: unset;
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-align: left;
+  }
+
+  .eco-node-icon {
+    flex-shrink: 0;
+  }
+
+  .eco-connector {
+    flex-direction: row;
+    min-width: unset;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .eco-arrow-line {
+    width: 2px;
+    height: 100%;
+    background: var(--accent-gradient);
+    position: relative;
+  }
+
+  .eco-arrow-line::after {
+    content: '?';
+    right: auto;
+    bottom: -12px;
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+  }
+
+  .eco-arrow-label {
+    writing-mode: horizontal-tb;
+  }
+
+  /* Ecosystem detail flow (ecosystem.html) mobile */
+  .eco-flow-detail {
+    flex-direction: column !important;
+    gap: 16px;
+  }
+
+  .efd-node {
+    flex: none !important;
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+    text-align: left;
+  }
+
+  .efd-connector {
+    width: 100%;
+    height: 2px;
+    background: rgba(37,99,235,0.2);
+  }
+
+  .flow-icon-img {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .eco-node {
+    padding: 16px;
+  }
+
+  .flow-icon-img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .efd-img-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* ============================
+   Partner stat card icons — ensure numbers show
+   ============================ */
+.ps-number {
+  min-height: 2.2rem;
+  display: block;
+}
+
+/* Pillar card Lucide icon size fix */
+.pillar-icon svg,
+.program-icon svg,
+.eco-note-icon svg,
+.ps-icon svg {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+/* ============================
+   Prog Visual Icon Box — ensure visible
+   ============================ */
+.prog-visual-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  min-height: 200px;
+}
