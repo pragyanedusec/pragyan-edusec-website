@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Redirect old WordPress blog category URLs to the new blogs page
+RewriteRule ^category/blog/?(.*)$ /blogs.html [R=301,L]
+
+# Redirect any old /blog URLs to the new blogs page just in case
+RewriteRule ^blog/?(.*)$ /blogs.html [R=301,L]
+</IfModule>
